@@ -1,0 +1,1 @@
+# swclient-smartpos
