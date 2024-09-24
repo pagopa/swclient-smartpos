@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_ultra_light">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_amount"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/fl_btn_amount"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/scontrino"
+            android:importantForAccessibility="no"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/margin_horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/header_margin_top"
+                android:fontFamily="@font/readex_pro"
+                android:text="@string/title_paymentOverview"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:background="@drawable/rounded_white_empty_8dp"
+                android:importantForAccessibility="no"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/titillium_web_semi_bold"
+                    android:padding="@dimen/twelve_dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body"
+                    tools:text="TARI 2022" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:importantForAccessibility="no" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/payment_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:padding="@dimen/twelve_dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body"
+                    tools:text="150,00 €" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:layout_marginBottom="@dimen/medium"
+                android:importantForAccessibility="no"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fee_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:text="@string/label_fee"
+                    android:textColor="@color/blue_grey_medium"
+                    android:textSize="@dimen/caption" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:importantForAccessibility="no" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fee_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h6"
+                    tools:text="1,00 €" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:layout_margin="0dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:layout_marginBottom="@dimen/medium"
+                android:importantForAccessibility="no"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:text="@string/label_toBePaid"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h3" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:importantForAccessibility="no" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/total_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h1_hero"
+                    tools:text="151,00 €" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_btn_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_top_corners_16_dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+            android:id="@+id/btn_pay_amount"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="@dimen/divider_padding"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            app:text="Paga 1200,00 €" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

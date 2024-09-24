@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/success_light">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_ll_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingVertical="@dimen/cta_margin_top"
+        android:layout_marginHorizontal="@dimen/margin_horizontal"
+        android:importantForAccessibility="no"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_operation"
+            android:layout_width="@dimen/result_image_dimension"
+            android:layout_height="@dimen/result_image_dimension"
+            android:layout_gravity="center_horizontal"
+            android:importantForAccessibility="no"
+            android:src="@drawable/success_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center_horizontal"
+            android:text="Grazie, l'operazione è stata eseguita con successo!"
+            android:textColor="@color/success_dark"
+            android:textSize="@dimen/h3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/titillium_web_regular"
+            android:gravity="center_horizontal"
+            android:text="Grazie, l'operazione è stata eseguita con successo!"
+            android:textColor="@color/success_dark"
+            android:textSize="@dimen/body" />
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+            android:id="@+id/btn_continue"
+            style="@style/SuccessDarkButtonEndStar"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            app:button_icon="@drawable/arrow_right"
+            app:button_text="Continua" />
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+            android:id="@+id/second_btn"
+            style="@style/SuccessLightButtonEndStar"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/header_margin_top"
+            app:button_text="Continua" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

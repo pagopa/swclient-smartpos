@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UiKitProgressBar">
+        <attr name="showText" format="boolean" />
+        <attr name="foregroundColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="textFont" format="integer" />
+        <attr name="textPadding" format="dimension" />
+        <attr name="textSize" format="float" />
+        <attr name="progressBarHeight" format="dimension" />
+        <attr name="progress" format="integer" />
+        <attr name="progressMaxValue" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="AnimatedProgress">
+        <attr name="kind_of_progress" format="enum">
+            <enum name="info" value="0" />
+            <enum name="error" value="1" />
+            <enum name="warning" value="2" />
+            <enum name="success" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CustomLoadingButton">
+        <attr name="text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CustomDrawableButton">
+        <attr name="button_text" format="string" />
+        <attr name="text_font" format="reference" />
+        <attr name="text_color" format="reference" />
+        <attr name="icon_padding" format="dimension" />
+        <attr name="button_icon" format="reference" />
+        <attr name="drawableGravity" format="enum">
+            <enum name="textStart" value="0" />
+            <enum name="textEnd" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="InputText">
+        <attr name="do_check" format="boolean" />
+        <attr name="left_drawable" format="reference" />
+        <attr name="right_drawable" format="reference" />
+        <attr name="left_text" format="string" />
+        <attr name="chunk" format="integer" />
+        <attr name="hint" format="string" />
+        <attr name="max_length" format="integer" />
+        <attr name="inputTypeInputText" format="enum">
+            <enum name="password" value="0" />
+            <enum name="text" value="1" />
+            <enum name="number" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CustomKeyboard">
+        <attr name="title" format="string" />
+        <attr name="is_pin" format="boolean" />
+    </declare-styleable>
+</resources>

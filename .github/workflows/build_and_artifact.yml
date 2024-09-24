@@ -1,0 +1,114 @@
+﻿# name of workflow
+name: Release a new version
+
+# Trigger on every push on developer branch
+on:
+  push:
+    branches:
+      - developer
+jobs:
+  build:
+    name: Generate Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      #
+      # Get Commit message
+      #
+      - name: get commit message
+        run: |
+          echo Commit MSG = ${{ env.commitmsg }}
+      #
+      # Checkout the source code.
+      #
+      - name: Checkout the code
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
+        with:
+          token: ${{ secrets.GIT_PAT }}
+          fetch-depth: 0
+      #
+      # Set JDK
+      #
+      - name: Set up JDK 17
+        uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9 # v4.2.1
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      #
+      # Cache Gradle dependencies and Gradle Wrapper
+      #
+      - name: Setup Gradle Cache
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
+
+      #
+      # Setup Gradle
+      #
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@db19848a5fa7950289d3668fb053140cf3028d43 # v3.3.2
+
+      - name: Move related JIRA tasks status from IN PROGRESS to CODE REVIEW
+        run: |
+          temp=$(echo "${{ github.event.head_commit.message }}" | grep -o '\[[^]]*\]' | sed 's/\[//;s/\]//' | tr -d ' ')
+          IFS=$',' read -ra keys <<< "$temp"
+          for key in "${keys[@]}"; do
+            echo "Move $key to CODE REVIEW."
+            curl -u ${{ secrets.JIRA_USER_EMAIL }}:${{ secrets.JIRA_API_TOKEN }} -X POST --data '{"transition":{"id":"71"}}' -H "Content-Type: application/json" ${{ secrets.JIRA_BASE_URL }}/rest/api/3/issue/$key/transitions
+          done
+          
+      #
+      # Execute Gradle build
+      #
+      #- name: Execute Gradle build
+      #  run: ./gradlew build
+      - name: ASSEMBLE VARIANTS
+        run: |
+          build_kind_variant=""
+          build_kind_variant="${build_kind_variant} AndroidNative"
+          build_type_variant=""
+          build_type_variant="${build_type_variant} Dev"
+          build_type_variant="${build_type_variant} Uat"
+          LAST_GIT_COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          echo "last commit msg:";
+          echo ${LAST_GIT_COMMIT_MESSAGE};
+          for Kind_v in ${build_kind_variant}; do
+              if [[ $LAST_GIT_COMMIT_MESSAGE = *${Kind_v}* ]]; then
+                  for build_variant in ${build_type_variant}; do
+                        echo build ${Kind_v} ${build_variant}
+                        ./gradlew assemble${Kind_v}${build_variant}Debug;
+                  done
+              fi
+          done
+
+      #ANDROID NATIVE
+      - name: Upload Android Native SWC_SMARTPOS DEV APK
+        if: "contains(github.event.head_commit.message, 'AndroidNative')"
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
+        with:
+          name: swc_smartpos_android_native_dev_apk
+          path: app/build/outputs/apk/androidNativeDev/debug/SWC-SMARTPOS-androidNative-dev-debug.apk
+
+      - name: Upload Android Native IdPay DEV APK
+        if: "contains(github.event.head_commit.message, 'AndroidNative')"
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
+        with:
+          name: id_pay_android_native_dev_apk
+          path: idpay/build/outputs/apk/androidNativeDev/debug/IDPAY-androidNative-dev-debug.apk
+
+      - name: Upload Android Native SWC_SMARTPOS UAT APK
+        if: "contains(github.event.head_commit.message, 'AndroidNative')"
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
+        with:
+          name: swc_smartpos_android_native_uat_apk
+          path: app/build/outputs/apk/androidNativeUat/debug/SWC-SMARTPOS-androidNative-uat-debug.apk
+
+      - name: Upload Android Native IdPay UAT APK
+        if: "contains(github.event.head_commit.message, 'AndroidNative')"
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
+        with:
+          name: id_pay_android_native_uat_apk
+          path: idpay/build/outputs/apk/androidNativeUat/debug/IDPAY-androidNative-uat-debug.apk
+

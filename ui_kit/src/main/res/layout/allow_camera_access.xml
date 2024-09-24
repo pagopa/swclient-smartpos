@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blu_io_alpha_75">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close_btn_allow_camera_access"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:importantForAccessibility="no"
+        android:padding="@dimen/margin_horizontal"
+        android:paddingStart="1dp"
+        android:paddingEnd="@dimen/margin_horizontal"
+        android:src="@drawable/icon_close_white" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_allow_access_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center"
+            android:text="@string/title_allowCamera"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description_allow_access_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/titillium_web_regular"
+            android:gravity="center"
+            android:text="@string/paragraph_allowCamera"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/white_button_allow_camera"
+            style="@style/WhiteButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            android:text="@string/cta_allow" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_allow_camera_fake_toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium"
+            android:background="@drawable/rounded_warning_light_8dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/header_margin_top">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/toast_image"
+                android:layout_height="@dimen/toast_image"
+                android:importantForAccessibility="no"
+                android:src="@drawable/warning_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/header_margin_top"
+                android:layout_weight="1"
+                android:fontFamily="@font/titillium_web_regular"
+                android:text="@string/paragraph_disclaimerChooseCarefully"
+                android:textColor="@color/warning_dark"
+                android:textSize="@dimen/body" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

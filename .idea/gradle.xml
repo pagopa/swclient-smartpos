@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/android" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app_shared" />
+            <option value="$PROJECT_DIR$/idpay" />
+            <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/pax" />
+            <option value="$PROJECT_DIR$/poynt" />
+            <option value="$PROJECT_DIR$/readcie" />
+            <option value="$PROJECT_DIR$/sharedUtils" />
+            <option value="$PROJECT_DIR$/ui_kit" />
+          </set>
+        </option>
+        <option name="resolveExternalAnnotations" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

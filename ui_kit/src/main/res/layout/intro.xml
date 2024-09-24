@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/main_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/header_height"
+                android:paddingVertical="@dimen/header_margin_top">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/icon_header_dimension"
+                    android:layout_height="match_parent"
+                    android:paddingStart="@dimen/margin_horizontal"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/menu" />
+            </FrameLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/main_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fl_main"
+                    android:layout_width="@dimen/fl_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/extra_extra_large"
+                    android:importantForAccessibility="no">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_main"
+                        android:layout_width="@dimen/image_width"
+                        android:layout_height="@dimen/image_height"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@color/white" />
+
+                    <View
+                        android:id="@+id/view_qr_code"
+                        android:layout_width="@dimen/circle_width"
+                        android:layout_height="@dimen/circle_width"
+                        android:layout_gravity="start|bottom"
+                        android:layout_marginBottom="@dimen/circle_bottom_margin"
+                        android:background="@drawable/rounded_turquoise_empty_circle"
+                        android:importantForAccessibility="no" />
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_horizontal"
+                    android:layout_marginTop="@dimen/medium"
+                    android:fontFamily="@font/readex_pro"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h4"
+                    tools:text="Inquadra il codice QR riportato sull’avviso pagoPA ed effettua un pagamento" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/main_btn"
+                    style="@style/WhiteButton"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/cta_margin_top"
+                    tools:text="Inquadra il codice QR" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_not_working"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/header_margin_top"
+                android:importantForAccessibility="no"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/questionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/extra_extra_large"
+                    android:fontFamily="@font/readex_pro"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h6"
+                    tools:text="Non funziona?" />
+
+                <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                    android:id="@+id/secondary_btn"
+                    style="@style/WhiteOutLinedButtonEndStar"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/medium"
+                    app:button_icon="@drawable/keyboard"
+                    tools:button_text="Inserisci tu i dati" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</FrameLayout>

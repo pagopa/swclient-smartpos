@@ -1,0 +1,153 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">pagoPA</string>
+    <string name="title_a11y_payNotice" ditto_api_id="title_a11y_payNotice">Paga un avviso pago pi a</string>
+    <string name="ui_kit_show_case">Ui kit show case</string>
+    <string name="title_bye" ditto_api_id="title_bye">Arrivederci!</string>
+    <string name="title_payNotice" ditto_api_id="title_payNotice">Paga un avviso pagoPA</string>
+    <string name="title_paymentHistory" ditto_api_id="title_paymentHistory">Storico operazioni</string>
+    <string name="title_showCodes" ditto_api_id="title_showCodes">Mostra i codici dell’avviso</string>
+    <string name="cta_scanQrCode" ditto_api_id="cta_scanQrCode">Inquadra il codice QR</string>
+    <string name="label_or" ditto_api_id="label_or">Oppure</string>
+    <string name="cta_continue" ditto_api_id="cta_continue">Continua</string>
+    <string name="cta_newPayment" ditto_api_id="cta_newPayment">Nuovo pagamento</string>
+    <string name="cta_sendEmail" ditto_api_id="cta_sendEmail">Invia via e-mail</string>
+    <string name="CTA_WriteOff" ditto_api_id="CTA_WriteOff">Effettua lo storno</string>
+    <string name="feedback_loading_verifyNotice" ditto_api_id="feedback_loading_verifyNotice">Stiamo verificando i dati</string>
+    <string name="label_paymentReason" ditto_api_id="label_paymentReason">Oggetto del pagamento</string>
+    <string name="label_updatedAmount" ditto_api_id="label_updatedAmount">Importo aggiornato</string>
+    <string name="label_username" ditto_api_id="label_username">Nome utente</string>
+    <string name="title_technicalError" ditto_api_id="title_technicalError">C’è un problema tecnico con questo avviso</string>
+    <string name="title_invalidData" ditto_api_id="title_invalidData">I dati dell’avviso non sono corretti</string>
+    <string name="title_payeeTimeout" ditto_api_id="title_payeeTimeout">L’Ente Creditore sta avendo problemi nella risposta</string>
+    <string name="title_paymentOngoing" ditto_api_id="title_paymentOngoing">Il pagamento è già in corso, riprova tra qualche minuto</string>
+    <string name="title_expiredNotice" ditto_api_id="title_expiredNotice">L’avviso è scaduto e non è più possibile pagarlo</string>
+    <string name="paragraph_contactPayee" ditto_api_id="paragraph_contactPayee">Contatta l’Ente per maggiori informazioni.</string>
+    <string name="title_unknownNotice" ditto_api_id="title_unknownNotice">Non riusciamo a trovare l’avviso</string>
+    <string name="paragraph_unknownNotice" ditto_api_id="paragraph_unknownNotice">L’avviso potrebbe essere stato già pagato. Per ricevere assistenza, contatta l’Ente creditore che lo ha emesso.</string>
+    <string name="title_revokedNotice" ditto_api_id="title_revokedNotice">L’Ente Creditore ha revocato questo avviso</string>
+    <string name="paragraph_noticeAlreadyPaid" ditto_api_id="paragraph_noticeAlreadyPaid">L’avviso è stato già pagato!</string>
+    <string name="title_noticeError" ditto_api_id="title_noticeError">Si è verificato un errore</string>
+    <string name="title_unknownError" ditto_api_id="title_unknownError">Si è verificato un’errore imprevisto</string>
+    <string name="paragraph_contactSupport" ditto_api_id="paragraph_contactSupport">Per assistenza visita il sito pagopa.gov.it/assistenza oppure chiama il numero 06.4520.2323.</string>
+    <string name="title_showQrCode" ditto_api_id="title_showQrCode">Mostra il codice QR</string>
+    <string name="cta_retry" ditto_api_id="cta_retry">Riprova</string>
+    <string name="title_invalidQrCode" ditto_api_id="title_invalidQrCode">Codice QR non valido</string>
+    <string name="paragraph_invalidQrCode" ditto_api_id="paragraph_invalidQrCode">Se il foglio non ha il logo pagoPA in alto a sinistra, potrebbe non essere un avviso valido. In alternativa, inserisci tu i dati riportati sull’avviso.</string>
+    <string name="cta_enterManually" ditto_api_id="cta_enterManually">Inserisci tu i dati</string>
+    <string name="title_generateReceipt" ditto_api_id="title_generateReceipt">Serve la ricevuta?</string>
+    <string name="cta_generateReceipt" ditto_api_id="cta_generateReceipt">Emetti ricevuta</string>
+    <string name="cta_printReceipt" ditto_api_id="cta_printReceipt">Stampa</string>
+    <string name="cta_noReceipt" ditto_api_id="cta_noReceipt">No, grazie</string>
+    <string name="cta_goToCheckout" ditto_api_id="cta_goToCheckout">Vai al pagamento</string>
+    <string name="label_noticeCode" ditto_api_id="label_noticeCode">Codice Avviso</string>
+    <string name="label_payeeTaxCode" ditto_api_id="label_payeeTaxCode">Codice Fiscale Ente</string>
+    <string name="title_paymentDetails" ditto_api_id="title_paymentDetails">Dati dell’avviso</string>
+    <string name="CTA_AbortPayment" ditto_api_id="CTA_AbortPayment">Esci dal pagamento</string>
+    <string name="title_exitDialog" ditto_api_id="title_exitDialog">Vuoi uscire dal pagamento in corso?</string>
+    <string name="paragraph_exitDialog" ditto_api_id="paragraph_exitDialog">L’operazione verrà annullata e sarà necessario reinserire i dati dell’avviso.</string>
+    <string name="cta_cancel" ditto_api_id="cta_cancel">Annulla</string>
+    <string name="title_differentAmount" ditto_api_id="title_differentAmount">Vedi un importo diverso rispetto all’avviso?</string>
+    <string name="paragraph_differentAmount" ditto_api_id="paragraph_differentAmount">pagoPA aggiorna automaticamente l’importo, così da far pagare esattamente quanto dovuto ed evitare more o altri interessi.</string>
+    <string name="cta_okay" ditto_api_id="cta_okay">Ok, ho capito</string>
+    <string name="title_paymentCompleted" ditto_api_id="title_paymentCompleted">Pagamento completato!</string>
+    <string name="title_noticeWarning" ditto_api_id="title_noticeWarning">C’è un problema con l’avviso</string>
+    <string name="error_op_description">Abbiamo riscontrato dei problemi con il pagamento, non è stato addebitato alcun importo.</string>
+    <string name="title_secondScreen_uncertainOutcome" ditto_api_id="title_secondScreen_uncertainOutcome">Verifica esito non riuscita</string>
+    <string name="info_op_description">Accedi al sito dell’ente per verificare lo stato dell’operazione</string>
+    <string name="title_paymentOverview" ditto_api_id="title_paymentOverview">Riepilogo del pagamento</string>
+    <string name="label_fee" ditto_api_id="label_fee">Commissione</string>
+    <string name="label_toBePaid" ditto_api_id="label_toBePaid">Totale</string>
+    <string name="cta_pay" ditto_api_id="cta_pay">Paga <xliff:g id="TotaleDaPagare" example="151,00 €">%1$s</xliff:g></string>
+    <string name="title_flowCompleted" ditto_api_id="title_flowCompleted">Operazione conclusa</string>
+    <string name="paragraph_receipt_suggestion" ditto_api_id="paragraph_receipt_suggestion">Puoi riemettere la ricevuta in un momento successivo dalla sezione ‘Storico operazioni’.</string>
+    <string name="paragraph_receipt_printed" ditto_api_id="paragraph_Receipt.Printed">La ricevuta è stata stampata. Puoi riemetterla dalla sezione ‘Storico operazioni’.</string>
+    <string name="title_enterNoticeCode" ditto_api_id="title_enterNoticeCode">Inserisci il codice avviso</string>
+    <string name="paragraph_noticeCode" ditto_api_id="paragraph_noticeCode">Ha 18 cifre, lo trovi vicino al codice QR.</string>
+    <string name="title_enterPayeeTaxCode" ditto_api_id="title_enterPayeeTaxCode">Inserisci il codice fiscale dell’Ente Creditore</string>
+    <string name="paragraph_payeeTaxCode" ditto_api_id="paragraph_payeeTaxCode">Ha 11 cifre, lo trovi vicino al codice QR.</string>
+    <string name="cta_goToHomepage" ditto_api_id="cta_goToHomepage">Torna alla home</string>
+    <string name="title_secondScreen_koOutcome" ditto_api_id="title_secondScreen_koOutcome">Problema con il pagamento</string>
+    <string name="title_continueOnPos" ditto_api_id="title_continueOnPos">Continua sull’app di pagamento del POS</string>
+    <string name="paragraph_continueOnPos" ditto_api_id="paragraph_continueOnPos">In caso di problemi, annulla la transazione dall’app di pagamento.</string>
+    <string name="cta_confirm" ditto_api_id="cta_confirm">Conferma</string>
+    <string name="feedback_loading_generic" ditto_api_id="feedback_loading_generic">Attendi qualche istante</string>
+    <string name="feedback_loading_paymentOutcome" ditto_api_id="feedback_loading_paymentOutcome">Stiamo verificando l’esito</string>
+    <string name="cta_changeInput" ditto_api_id="cta_changeInput">Lascialo fare al cliente</string>
+    <string name="cta_login" ditto_api_id="cta_login">Accedi</string>
+    <string name="label_email" ditto_api_id="label_email">Indirizzo e‑mail</string>
+    <string name="cta_menu_logout" ditto_api_id="cta_menu_logout">Esci</string>
+    <string name="feedback_loginFailed" ditto_api_id="feedback_loginFailed">Accesso non riuscito. Hai inserito il nome utente e la password corretti\?</string>
+    <string name="label_password" ditto_api_id="label_password">Password</string>
+    <string name="label_payee" ditto_api_id="label_payee">Ente Creditore</string>
+    <string name="label_transactionState_failed" ditto_api_id="label_transactionState_failed">Fallita</string>
+    <string name="label_TransactionState_Performed" ditto_api_id="label_TransactionState.Performed">Eseguita</string>
+    <string name="label_TransactionState_ToBeWriteOff" ditto_api_id="label_TransactionState.ToBeWriteOff">Da stornare</string>
+    <string name="label_TransactionState_WriteOff" ditto_api_id="label_TransactionState.WriteOff">Stornata</string>
+    <string name="paragraph_paymentHistory" ditto_api_id="paragraph_paymentHistory">Seleziona un elemento per visualizzare i dettagli o riemettere una ricevuta</string>
+    <string name="paragraph_payeeUnavailable" ditto_api_id="paragraph_payeeUnavailable">Ti preghiamo di attendere un paio di minuti al massimo, senza chiudere l’app nel frattempo.</string>
+    <string name="paragraph_receipt_emailSent" ditto_api_id="paragraph_receipt_emailSent">Abbiamo inviato la ricevuta dell’operazione a <xliff:g id="IndirizzoEmail" example="nome.cognome@pagopa.it">%1$s</xliff:g>.</string>
+    <string name="paragraph_WriteOffRequired" ditto_api_id="paragraph_WriteOffRequired">La transazione è stata addebitata, ma l’operazione non è andata a buon fine.</string>
+    <string name="title_authorizationDenied" ditto_api_id="title_authorizationDenied">Autorizzazione negata</string>
+    <string name="title_insertEmail" ditto_api_id="title_InsertEmail">Inserisci l’e‑mail del cliente</string>
+    <string name="title_loginTestEnv" ditto_api_id="title_loginTestEnv">Ambiente di test</string>
+    <string name="title_payeeUnavailable" ditto_api_id="title_payeeUnavailable">L’Ente sta impiegando più tempo del previsto…</string>
+    <string name="title_ReceiptGenerated" ditto_api_id="title_ReceiptGenerated">Ricevuta emessa</string>
+    <string name="title_secondScreen_payeeUnavailable" ditto_api_id="title_secondScreen_payeeUnavailable">In attesa dell’Ente…</string>
+    <string name="title_SecondScreen_ReversalFailed" ditto_api_id="title_SecondScreen.ReversalFailed">Riaccredito non riuscito</string>
+    <string name="title_secondScreen_printReceipt" ditto_api_id="title_secondScreen_printReceipt">Stampa della ricevuta</string>
+    <string name="title_SecondScreen_ReversalPerformed" ditto_api_id="title_SecondScreen.ReversalPerformed">Riaccredito completato!</string>
+    <string name="title_transactionCancelled" ditto_api_id="title_transactionCancelled">Transazione annullata</string>
+    <string name="title_transactionDetail" ditto_api_id="title_transactionDetail">Dettaglio operazione</string>
+    <string name="title_uncertainOutcome" ditto_api_id="title_uncertainOutcome">Non è stato possibile verificare l’esito dell’operazione</string>
+    <string name="title_waitForEmail" ditto_api_id="title_waitForEmail">Attendi l’inserimento dell’e‑mail</string>
+    <string name="title_whatsYourEmail" ditto_api_id="title_whatsYourEmail">Qual è la tua e‑mail?</string>
+    <string name="title_WriteOffRequired" ditto_api_id="title_WriteOffRequired">È necessario stornare la transazione</string>
+    <string name="label_Amount" ditto_api_id="label_Amount">Importo</string>
+    <string name="label_Amount_to_refund" ditto_api_id="label_Amount_to_refund">Importo da rimborsare</string>
+    <string name="feedback_loading_printReceipt" ditto_api_id="feedback_loading_printReceipt">Attendi la stampa della ricevuta…</string>
+    <string name="title_printingError" ditto_api_id="title_printingError">Stampa non riuscita</string>
+    <string name="paragraph_printingError" ditto_api_id="paragraph_printingError">Controlla che la carta non sia esaurita o inceppata.</string>
+    <string name="title_exitAppDialog" ditto_api_id="title_exitAppDialog">Confermi di voler uscire dall’app pagoPA\?</string>
+    <string name="cta_exitApp" ditto_api_id="cta_exitApp">Esci dall’app</string>
+    <string name="cta_close" ditto_api_id="cta_close">Chiudi</string>
+    <string name="title_sessionExpired" ditto_api_id="title_sessionExpired">Sessione scaduta</string>
+    <string name="paragraph_sessionExpired" ditto_api_id="paragraph_sessionExpired">Accedi nuovamente all’app.</string>
+    <string name="payment_receipt">RICEVUTA DI PAGAMENTO</string>
+    <string name="assistance_contact">CONTATTA L’ASSISTENZA</string>
+    <string name="receipt_not_ok_description">Inquadra il codice QR per contattare\nrapidamente l’assistenza pagoPA\nvia email oppure chiamaci\nallo 06.4520.2323.</string>
+    <string name="pagoPa_mail">pagamenti@assistenza.pagopa.it</string>
+    <string name="mail_subject">Errore pagamento da POS</string>
+    <string name="mail_body_title">Informazioni sul pagamento fallito</string>
+    <string name="transaction_id">ID Transazione</string>
+    <string name="terminal">Terminale</string>
+    <string name="transaction">TRANSAZIONE</string>
+    <string name="pago_pa_assistance">ASSISTENZA PAGOPA</string>
+    <string name="payment_managed_by">Pagamento gestito da</string>
+    <string name="terminal_code">CODICE TERMINALE</string>
+    <string name="cta_menu_payNotice" ditto_api_id="cta_menu_payNotice">Paga un avviso</string>
+    <string name="cta_menu_paymentHistory" ditto_api_id="cta_menu_paymentHistory">Storico operazioni</string>
+    <string name="cta_menu_support" ditto_api_id="cta_menu_support">Assistenza</string>
+    <string name="uikit">UIKit</string>
+    <string name="paragraph_noCharges" ditto_api_id="paragraph_noCharges">Non è stato addebitato alcun importo.</string>
+    <string name="title_emptyState_transactionList" ditto_api_id="title_emptyState_transactionList">Non ci sono operazioni</string>
+    <string name="paragraph_emptyState_transactionList" ditto_api_id="paragraph_emptyState_transactionList">Nello storico vengono visualizzate le operazioni eseguite negli ultimi 30 giorni. Se hai bisogno di aiuto contatta l’assistenza.</string>
+    <string name="cta_goToSupport" ditto_api_id="cta_goToSupport">Vai all’assistenza</string>
+    <string name="title_errorLoadingTransactionList" ditto_api_id="title_errorLoadingTransactionList">Non è stato possibile recuperare lo storico delle operazioni</string>
+    <string name="paragraph_tryAgain" ditto_api_id="paragraph_tryAgain">Riprova tra qualche minuto.</string>
+    <string name="title_esito_dubbio">Non è stato possibile verificare l\'esito</string>
+    <string name="paragraph_contactPagopa" ditto_api_id="paragraph_contactPagopa">Contatta l’assistenza seguendo le istruzioni riportate sulla ricevuta.</string>
+    <string name="title_koOutcome" ditto_api_id="title_koOutcome">C’è stato un problema con il pagamento dell’avviso</string>
+    <string name="verifying_advice_title">Stiamo verificando l’avviso di pagamento</string>
+    <string name="verifying_advice_description">L’operazione può richiedere qualche secondo, non chiudere l’app.</string>
+    <string name="verifying_session_title">Stiamo verificando la sessione…</string>
+    <string name="helped_way">Modalità asservita</string>
+    <string name="helped_way_title">Inserisci il nome del terminale</string>
+    <string name="helped_way_hint">Nome del terminale</string>
+    <string name="helped_way_unsubscribe">Disattiva modalità asservita</string>
+    <string name="helped_way_fail_subscribe">Non è stato possibile attivare la modalità asservita</string>
+    <string name="helped_way_ok_subscribe">Modalità asservita attivata</string>
+    <string name="helped_way_unsubscribe_loading">Disattivando modalità asservita…</string>
+    <string name="getting_last_advice">Stiamo caricando l’ultimo avviso</string>
+    <string name="go_to_last_advice">Vai all’ultimo avviso</string>
+    <string name="no_advices_found">Non abbiamo trovato avvisi da pagare.\nsubscriberId: %s</string>
+</resources>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_ultra_light">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/fl_do_receipt"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/scontrino"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/readex_pro"
+                android:text="@string/title_transactionDetail"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h3" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/readex_pro"
+                        android:text="@string/label_transactionTime"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue_grey_medium"
+                        android:textSize="@dimen/caption" />
+
+                    <TextView
+                        android:id="@+id/timestamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/titillium_web_bold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/body"
+                        tools:text="15 mar 2023, 16:44" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/badge_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/badge_eseguita"
+                    android:fontFamily="@font/readex_pro"
+                    android:paddingHorizontal="8dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/caption"
+                    tools:text="ESEGUITA" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDividerCustomMargin"
+                android:layout_alignParentTop="true"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginVertical="@dimen/header_margin_top" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:text="@string/label_noticeCode"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue_grey_medium"
+                    android:textSize="@dimen/caption" />
+
+                <TextView
+                    android:id="@+id/codiceAvviso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/titillium_web_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body"
+                    tools:text="0000012345677" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDividerCustomMargin"
+                android:layout_alignParentTop="true"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginVertical="@dimen/header_margin_top" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:orientation="vertical"
+
+                >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:text="@string/label_updatedAmount"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue_grey_medium"
+                    android:textSize="@dimen/caption"
+
+                    />
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/titillium_web_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body"
+                    tools:text="0000012345677"
+
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDividerCustomMargin"
+                android:layout_alignParentTop="true"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginVertical="@dimen/header_margin_top" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/readex_pro"
+                    android:text="@string/label_fee"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue_grey_medium"
+                    android:textSize="@dimen/caption" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/titillium_web_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h6"
+                    tools:text="100,00 €" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDividerCustomMargin"
+                android:layout_alignParentTop="true"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginVertical="@dimen/header_margin_top" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginBottom="@dimen/margin_horizontal"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/readex_pro"
+                    android:text="@string/label_toBePaid"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h3" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/titillium_web_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h3"
+                    tools:text="100,00 €" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/fl_do_receipt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_top_corners_16_dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+            android:id="@+id/btn_ricevuta"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/divider_padding"
+            app:text="Emetti ricevuta" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

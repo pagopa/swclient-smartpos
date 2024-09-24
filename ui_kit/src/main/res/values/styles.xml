@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/caption</item>
+    </style>
+    <style name="UiKitProgressBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="textFont">@font/uikit_opensans_semibold</item>-->
+        <item name="backgroundColor">@color/white</item>
+        <item name="foregroundColor">@color/primary</item>
+        <item name="progressBarHeight">4dp</item>
+        <item name="progress">50</item>
+        <item name="textPadding">16dp</item>
+    </style>
+
+    <style name="AnimatedProgress">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/lottie_progress_height</item>
+        <item name="android:layout_marginStart">@dimen/margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_horizontal</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_margin">@dimen/divider_padding</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:background">@color/grey_ultra_light</item>
+    </style>
+
+    <style name="HorizontalDivider" parent="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="VerticalDivider" parent="Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="HorizontalDividerCustomMargin" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:background">@color/grey_ultra_light</item>
+    </style>
+
+    <style name="AnimatedProgressSuccess" parent="AnimatedProgress">
+        <item name="kind_of_progress">success</item>
+    </style>
+
+    <style name="AnimatedProgressInfo" parent="AnimatedProgress">
+        <item name="kind_of_progress">info</item>
+    </style>
+
+    <style name="AnimatedProgressError" parent="AnimatedProgress">
+        <item name="kind_of_progress">error</item>
+    </style>
+
+    <style name="AnimatedProgressWarning" parent="AnimatedProgress">
+        <item name="kind_of_progress">warning</item>
+    </style>
+
+    <style name="MainButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/readex_pro</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingStart">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="android:paddingEnd">@dimen/button_padding_horizontal</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">@dimen/cta</item>
+    </style>
+
+    <style name="MainDrawableButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:textSize">@dimen/cta</item>
+    </style>
+
+    <style name="PrimaryButton" parent="MainButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_primary_filled_8dp</item>
+    </style>
+
+    <style name="PrimaryButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_primary_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="PrimaryButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_primary_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="PrimaryOutLinedButton" parent="MainButton">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:background">@drawable/rounded_primary_empty_8dp</item>
+    </style>
+
+    <style name="PrimaryOutLinedButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_primary_empty_8dp</item>
+        <item name="button_icon">@drawable/primary_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/primary</item>
+    </style>
+
+    <style name="PrimaryOutLinedButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_primary_empty_8dp</item>
+        <item name="button_icon">@drawable/primary_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/primary</item>
+    </style>
+
+    <style name="WhiteOutLinedButton" parent="MainButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_white_primary_border_8dp</item>
+    </style>
+
+    <style name="WhiteOutLinedButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_white_primary_border_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="WhiteOutLinedButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_white_primary_border_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="WhiteButton" parent="MainButton">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:background">@drawable/rounded_white_filled_8dp</item>
+    </style>
+
+    <style name="WhiteButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_white_filled_8dp</item>
+        <item name="button_icon">@drawable/primary_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/primary</item>
+    </style>
+
+    <style name="WhiteButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_white_filled_8dp</item>
+        <item name="button_icon">@drawable/primary_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/primary</item>
+    </style>
+
+    <style name="SuccessLightButton" parent="MainButton">
+        <item name="android:textColor">@color/success_dark</item>
+        <item name="android:background">@drawable/rounded_success_light_filled_8dp</item>
+    </style>
+
+    <style name="SuccessLightButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_success_light_filled_8dp</item>
+        <item name="button_icon">@drawable/green_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/success_dark</item>
+    </style>
+
+    <style name="SuccessLightButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_success_light_filled_8dp</item>
+        <item name="button_icon">@drawable/green_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/success_dark</item>
+    </style>
+
+    <style name="SuccessDarkButton" parent="MainButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_success_dark_filled_8dp</item>
+    </style>
+
+    <style name="SuccessDarkButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_success_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="SuccessDarkButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_success_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="InfoLightButton" parent="MainButton">
+        <item name="android:textColor">@color/info_dark</item>
+        <item name="android:background">@drawable/rounded_info_light_filled_8dp</item>
+    </style>
+
+    <style name="InfoLightButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_info_light_filled_8dp</item>
+        <item name="button_icon">@drawable/primary_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/info_dark</item>
+    </style>
+
+    <style name="InfoLightButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_info_light_filled_8dp</item>
+        <item name="button_icon">@drawable/primary_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/info_dark</item>
+    </style>
+
+    <style name="InfoDarkButton" parent="MainButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_info_dark_filled_8dp</item>
+    </style>
+
+    <style name="InfoDarkButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_info_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="InfoDarkButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_info_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="ErrorLightButton" parent="MainButton">
+        <item name="android:textColor">@color/error_dark</item>
+        <item name="android:background">@drawable/rounded_error_light_filled_8dp</item>
+    </style>
+
+    <style name="ErrorLightButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_error_light_filled_8dp</item>
+        <item name="button_icon">@drawable/red_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/error_dark</item>
+    </style>
+
+    <style name="ErrorLightButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_error_light_filled_8dp</item>
+        <item name="button_icon">@drawable/red_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/error_dark</item>
+    </style>
+
+    <style name="ErrorDarkButton" parent="MainButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_error_dark_filled_8dp</item>
+    </style>
+
+    <style name="ErrorDarkButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_error_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="ErrorDarkButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_error_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="WarningDarkButton" parent="MainButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_warning_dark_filled_8dp</item>
+    </style>
+
+    <style name="WarningDarkButtonEndStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_warning_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textEnd</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="WarningDarkButtonStartStar" parent="MainDrawableButton">
+        <item name="android:background">@drawable/rounded_warning_dark_filled_8dp</item>
+        <item name="button_icon">@drawable/white_star</item>
+        <item name="drawableGravity">textStart</item>
+        <item name="text_color">@color/white</item>
+    </style>
+
+    <style name="SheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+
+
+</resources>

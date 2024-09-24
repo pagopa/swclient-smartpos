@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="@dimen/margin_horizontal"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/extra_large">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center_horizontal"
+            android:text="@string/identify_with_io"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center_horizontal"
+            android:text="@string/scan_qr_with_IO"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h4" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/qr_image"
+            android:layout_width="@dimen/qr_code_size"
+            android:layout_height="@dimen/qr_code_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            tools:src="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trouble_with_qr"
+            style="@style/PrimaryOutLinedButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:text="@string/qr_trouble_question" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

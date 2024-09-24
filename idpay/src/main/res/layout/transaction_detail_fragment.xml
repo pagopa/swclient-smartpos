@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_ultra_light">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_bottom"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/scontrino"
+            android:importantForAccessibility="no"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/margin_horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro"
+                android:text="@string/title_transactionDetail"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h3" />
+
+            <include
+                android:id="@+id/layout_date_and_time"
+                layout="@layout/item_transaction_detail" />
+
+            <include
+                android:id="@+id/layout_transaction_id"
+                layout="@layout/item_transaction_detail" />
+
+            <include
+                android:id="@+id/layout_initiative"
+                layout="@layout/item_transaction_detail" />
+
+            <include
+                android:id="@+id/layout_goods_cost"
+                layout="@layout/item_transaction_detail" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/divider_padding"
+                android:layout_marginBottom="@dimen/divider_padding"
+                android:importantForAccessibility="no"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:text="@string/id_pay_bonus"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h3" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:importantForAccessibility="no" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_pay_bonus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/readex_pro"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h3"
+                    tools:text="59,99 €" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_top_corners_16_dp"
+        android:elevation="16dp"
+        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel_op"
+            style="@style/PrimaryOutLinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/divider_padding"
+            android:text="@string/cancel_id_pay_bonus_are_you_sure_cta_yes" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/do_receipt"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginVertical="@dimen/divider_padding"
+            android:text="@string/cta_generateReceipt" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

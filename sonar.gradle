@@ -1,0 +1,16 @@
+plugins {
+    id 'org.sonarqube' version '3.0'
+}
+
+sonarqube {
+    properties {
+        property "sonar.organization", "pagopa"
+        property "sonar.projectKey", "pagopa_swc-smartpos"
+        property 'sonar.host', 'https://sonarcloud.io:443'
+        property 'sonar.java.source', 11
+        property 'sonar.junit.reportPaths', 'build/results'
+        property 'encoding', 'UTF-8'
+        property 'charSet', 'UTF-8'
+        property "sonar.coverage.jacoco.xmlReportPaths", "path.xml"
+    }
+}

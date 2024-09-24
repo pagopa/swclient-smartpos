@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <it.pagopa.swc_smartpos.ui_kit.input.InputText
+        android:id="@+id/input_field_11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_horizontal"
+        app:chunk="4"
+        app:do_check="true"
+        app:hint="Example one length 11"
+        app:inputTypeInputText="number"
+        app:max_length="11" />
+
+    <it.pagopa.swc_smartpos.ui_kit.input.InputText
+        android:id="@+id/input_field_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_horizontal"
+        app:chunk="0"
+        app:do_check="true"
+        app:hint="Example two length 5 no chunk"
+        app:inputTypeInputText="number"
+        app:left_text=""
+        app:max_length="5" />
+
+
+    <it.pagopa.swc_smartpos.ui_kit.input.InputText
+        android:id="@+id/input_field_18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_horizontal"
+        app:chunk="0"
+        app:hint="Example three no max length"
+        app:inputTypeInputText="number"
+        app:left_drawable="@drawable/primary_star"
+        app:max_length="0"
+        app:right_drawable="@drawable/primary_star" />
+
+    <it.pagopa.swc_smartpos.ui_kit.input.InputText
+        android:id="@+id/input_field_11_no_ctrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_horizontal"
+        app:chunk="0"
+        app:do_check="true"
+        app:hint="Example three length 10"
+        app:inputTypeInputText="number"
+        app:left_text="Some instruction for filling info"
+        app:left_drawable="@drawable/primary_star"
+        app:max_length="10" />
+</LinearLayout>

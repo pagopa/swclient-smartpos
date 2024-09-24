@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_no_op"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center"
+            android:text="@string/title_emptyState_transactionList"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_small"
+            android:fontFamily="@font/titillium_web_regular"
+            android:gravity="center"
+            android:text="@string/paragraph_emptyState_transactionList"
+            android:textColor="@color/black"
+            android:textSize="@dimen/body" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/go_to_assistance"
+            style="@style/PrimaryOutLinedButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/extra_large"
+            android:text="@string/cta_goToSupport" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/margin_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/header_margin_top"
+                android:fontFamily="@font/readex_pro"
+                android:text="@string/title_paymentHistory"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro"
+                android:text="@string/paragraph_paymentHistory"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h6" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/history_rw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/history_item" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

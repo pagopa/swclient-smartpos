@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_initiative_size">57dp</dimen>
+    <dimen name="arrow_height">21dp</dimen>
+    <dimen name="arrow_width">12dp</dimen>
+    <dimen name="qr_code_size">240dp</dimen>
+    <dimen name="extra_extra_large">72dp</dimen>
+    <integer name="qr_code_size_integer">240</integer>
+    <dimen name="cie_image_height">240dp</dimen>
+    <dimen name="cie_image_width">300dp</dimen>
+    <dimen name="circle_read_size">18dp</dimen>
+    <dimen name="cie_feedback_image_size">180dp</dimen>
+    <dimen name="base_form_logo">150dp</dimen>
+</resources>

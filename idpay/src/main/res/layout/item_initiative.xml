@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_marginTop="@dimen/divider_padding"
+        android:paddingHorizontal="@dimen/margin_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_horizontal"
+            app:cardCornerRadius="4dp"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/logo_initiative_size"
+                android:layout_height="@dimen/logo_initiative_size"
+                android:background="@color/primary"
+                android:src="@drawable/logo" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/string_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/readex_pro"
+            tools:text="Voucher connettività"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h6" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/arrow_width"
+            android:layout_height="@dimen/arrow_height"
+            android:layout_gravity="center"
+            android:src="@drawable/chevron_right_primary" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+        android:id="@+id/divider"
+        style="@style/HorizontalDivider"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

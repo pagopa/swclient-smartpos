@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/margin_horizontal">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_item"
+            android:layout_width="@dimen/rv_item"
+            android:layout_height="@dimen/rv_item"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/icon_creditor_company" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/divider_padding"
+            android:importantForAccessibility="no"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro"
+                android:textColor="@color/blue_grey_medium"
+                android:textSize="@dimen/caption"
+                tools:text="TEST" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/titillium_web_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body"
+                tools:text="TEST" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_item_info"
+            android:layout_width="@dimen/rv_item"
+            android:layout_height="@dimen/rv_item"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/icon_info_primary" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+        android:id="@+id/item_divider"
+        style="@style/HorizontalDivider"
+        android:layout_margin="0dp"
+        android:background="@color/grey_ultra_light" />
+</androidx.appcompat.widget.LinearLayoutCompat>
