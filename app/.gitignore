@@ -1,0 +1,13 @@
+/build/generated
+/build/intermediates
+/build/kotlin
+/build/kotlinToolingMetadata
+/build/reports
+/build/test-results
+/build/tmp
+/build/outputs/logs
+/build/outputs/mapping
+/build/outputs/sdk-dependencies
+/build/outputs/androidTest-results
+/poynt
+/pax

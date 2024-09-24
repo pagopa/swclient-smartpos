@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="HardcodedText">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view_buttons_show_case"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btn_show_case_main_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_bold"
+                android:gravity="center"
+                android:text="Info"
+                android:textColor="@color/info_dark"
+                android:textSize="@dimen/h1" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+                android:id="@+id/info_dark_btn"
+                style="@style/InfoDarkButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:text="Info dark" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+                android:id="@+id/info_light_btn"
+                style="@style/InfoLightButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:text="Info light" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                style="@style/InfoDarkButtonEndStar"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                android:layout_marginBottom="3dp"
+                app:button_text="Info end drawable" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                style="@style/InfoLightButtonStartStar"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                android:layout_marginBottom="3dp"
+                app:button_text="Info start drawable" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_bold"
+                android:gravity="center"
+                android:text="Success"
+                android:textColor="@color/success_dark"
+                android:textSize="@dimen/h1" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+                android:id="@+id/success_dark_btn"
+                style="@style/SuccessDarkButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:text="Success dark" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+                android:id="@+id/success_light_btn"
+                style="@style/SuccessLightButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:text="Success light" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                style="@style/SuccessDarkButtonEndStar"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:button_text="Success end drawable" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                style="@style/SuccessLightButtonStartStar"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                android:layout_marginBottom="3dp"
+                app:button_text="Success start drawable" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro_bold"
+                android:gravity="center"
+                android:text="Error"
+                android:textColor="@color/error_dark"
+                android:textSize="@dimen/h1" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+                android:id="@+id/error_dark_btn"
+                style="@style/ErrorDarkButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:text="Error dark" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+                android:id="@+id/error_light_btn"
+                style="@style/ErrorLightButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:text="Error light" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                style="@style/ErrorDarkButtonEndStar"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:button_text="Error end drawable" />
+
+            <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+                style="@style/HorizontalDivider"
+                android:background="@color/primary" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                style="@style/ErrorLightButtonStartStar"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_margin_top"
+                android:layout_marginBottom="3dp"
+                app:button_text="Error start drawable" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

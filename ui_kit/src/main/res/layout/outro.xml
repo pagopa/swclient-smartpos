@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back_home"
+        android:layout_width="@dimen/icon_header_dimension"
+        android:layout_height="@dimen/icon_header_dimension"
+        android:layout_gravity="end"
+        android:paddingTop="@dimen/margin_horizontal"
+        android:paddingEnd="@dimen/margin_horizontal"
+        android:src="@drawable/home" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/margin_horizontal"
+        android:importantForAccessibility="no"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center_horizontal"
+            tools:text="Operazione conclusa"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/titillium_web_regular"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body"
+            tools:text="Puoi riemettere la ricevuta in un momento successivo dalla sezione ‘Storico operazioni’." />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_new_payment"
+            style="@style/WhiteButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            android:text="Nuovo pagamento" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

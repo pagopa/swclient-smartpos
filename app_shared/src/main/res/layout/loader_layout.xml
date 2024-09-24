@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:importantForAccessibility="no"
+    android:visibility="gone">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:importantForAccessibility="no"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="@dimen/loader"
+            android:layout_height="@dimen/loader"
+            android:layout_gravity="center_horizontal"
+            android:importantForAccessibility="no"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/pagopa_loader" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_loader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center"
+            android:text="@string/feedback_loading_verifyNotice"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h3" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

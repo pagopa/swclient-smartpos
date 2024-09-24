@@ -1,0 +1,160 @@
+﻿# name of workflow
+name: Release a new version
+
+# Trigger on every pull request
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Assemble Release Artifacts and push it
+    if: github.event.pull_request.merged == true
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      new_release_published: ${{ steps.semantic.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic.outputs.new_release_version }}
+
+    steps:
+      #
+      # Get Commit message
+      #
+      - name: get commit message
+        run: |
+          echo Commit MSG = ${{ env.commitmsg }}
+      #
+      # Checkout the source code.
+      # sha v is 4.1.5
+      #
+      - name: Checkout the code
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b
+        with:
+          token: ${{ secrets.GIT_PAT }}
+          fetch-depth: 0
+      #
+      # Set JDK
+      # sha v is 4.2.1
+      #
+      - name: Set up JDK 17
+        uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      #
+      # Cache Gradle dependencies and Gradle Wrapper
+      # sha v is 4.0.2
+      #
+      - name: Setup Gradle Cache
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
+      #
+      # Setup Gradle
+      # sha v is 3.3.2
+      #
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@4c39dd82cd5e1ec7c6fa0173bb41b4b6bb3b86ff
+
+      #
+      # Execute Gradle build
+      #
+      #- name: Execute Gradle build
+      #  run: ./gradlew build
+      - name: ASSEMBLE VARIANTS
+        run: |
+          build_kind_variant=""
+          build_kind_variant="${build_kind_variant} Pax"
+          build_kind_variant="${build_kind_variant} Poynt"
+          build_kind_variant="${build_kind_variant} AndroidNative"
+          build_type_variant=""
+          build_type_variant="${build_type_variant} Uat"
+          LAST_GIT_COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          echo "last commit msg:";
+          echo ${LAST_GIT_COMMIT_MESSAGE};
+          for Kind_v in ${build_kind_variant}; do
+              if [[ $LAST_GIT_COMMIT_MESSAGE = *${Kind_v}* ]]; then
+                  for build_variant in ${build_type_variant}; do
+                        echo build ${Kind_v} ${build_variant}
+                        ./gradlew assemble${Kind_v}${build_variant}Release;
+                  done
+              fi
+          done
+
+      #
+      # Verify Resources
+      #
+      - name: Verify Resources
+        run: ./gradlew verifyReleaseResources
+
+      #
+      # Calculation of the new version (dry-run).
+      # sha v is 4.1.0
+      #
+      - name: Calculation of the new version (dry-run)
+        uses: cycjimmy/semantic-release-action@cb425203a562475bca039ba4dbf90c7f9ac790f4
+        id: semantic
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          semantic_version: 19
+          branch: main
+          extra_plugins: |
+            @semantic-release/release-notes-generator@10.0.3
+            @semantic-release/git@10.0.1
+          dry_run: true
+
+      # Update of build.gradle with the new version + Git add + commit + push of the updated build.gradle.
+      # sha v is 1.0.0
+      #
+      - name: Bump version
+        uses: damienaicheh/update-android-version-gradle-action@cf3e11ae2ebb11aba884c65838483f2fa8c4a5a8
+        with:
+          build-gradle-path: app/build.gradle # or app/build.gradle.kts
+          version-code: ${{github.run_number}}
+          version-name: ${{ steps.semantic.outputs.new_release_version }}
+          print-file: true
+
+      - name: Update of build.gradle with the new version + Git add + commit + push of the updated build.gradle
+        if: steps.semantic.outputs.new_release_published == 'true'
+        run: |
+          gradle -Pversion=${{ steps.semantic.outputs.new_release_version }}
+      #
+      # Sleep for 60s to avoid this issue: https://github.com/semantic-release/semantic-release/issues/2204
+      #
+      - name: Sleep for 60s to avoid the issue 2204
+        if: steps.semantic.outputs.new_release_published == 'true'
+        run: sleep 60s
+
+      #
+      # Calculation of the new version (again) with tagging + releasing + etc.
+      # sha v is 4.1.0
+      #
+      - name: Calculation of the new version (again) with tagging + releasing + etc
+        if: steps.semantic.outputs.new_release_published == 'true'
+        uses: cycjimmy/semantic-release-action@cb425203a562475bca039ba4dbf90c7f9ac790f4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          semantic_version: 19
+          branch: main
+          extra_plugins: |
+            @semantic-release/release-notes-generator@10.0.3
+            @semantic-release/git@10.0.1
+          dry_run: false
+
+
+      #ANDROID NATIVE
+      - name: Upload Android Native IdPay UAT APK
+        if: "contains(github.event.head_commit.message, 'AndroidNative')"
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
+        with:
+          name: id_pay_android_native_uat_apk_release
+          path: idpay/build/outputs/apk/androidNativeUat/release/IDPAY-androidNative-uat-release.apk

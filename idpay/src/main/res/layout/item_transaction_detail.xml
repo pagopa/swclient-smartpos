@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/divider_padding"
+    android:importantForAccessibility="no"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro"
+                android:text="@string/label_transactionTime"
+                android:textSize="@dimen/caption" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/titillium_web_semi_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/body"
+                tools:text="15 mar 2023, 16:44" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:importantForAccessibility="no"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/executed_or_not"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/titillium_web_semi_bold"
+            tools:text="ESEGUITA"
+            android:textColor="@color/success_dark"
+            android:padding="@dimen/extra_small"
+            android:background="@drawable/badge_eseguita"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <it.pagopa.swc_smartpos.ui_kit.divider.Divider
+        style="@style/HorizontalDividerCustomMargin"
+        android:layout_marginTop="@dimen/divider_padding" />
+</androidx.appcompat.widget.LinearLayoutCompat>

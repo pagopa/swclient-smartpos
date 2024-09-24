@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_a11y_payNotice" ditto_api_id="title_a11y_payNotice">Paga un avviso pago pi a</string>
+    <string name="cta_close" ditto_api_id="cta_close">Chiudi</string>
+    <string name="title_allowCamera" ditto_api_id="title_allowCamera">Consenti l’accesso alla fotocamera</string>
+    <string name="paragraph_allowCamera" ditto_api_id="paragraph_allowCamera">Potrai effettuare pagamenti più velocemente inquadrando il codice QR presente sugli avvisi.</string>
+    <string name="title_cameraDenied" ditto_api_id="title_cameraDenied">Non hai concesso l’accesso alla fotocamera</string>
+    <string name="paragraph_contactPosProvider" ditto_api_id="paragraph_contactPosProvider">Per usarla, devi reinstallare l’app. Contatta il fornitore del POS per maggiori informazioni.</string>
+    <string name="cta_allow" ditto_api_id="cta_allow">Consenti</string>
+    <string name="cta_enterManually" ditto_api_id="cta_enterManually">Inserisci tu i dati</string>
+    <string name="paragraph_disclaimerChooseCarefully" ditto_api_id="paragraph_disclaimerChooseCarefully">Se neghi il consenso e cambi idea in futuro, dovrai prima reinstallare l’app.</string>
+    <string name="label_transactionState_failed" ditto_api_id="label_transactionState_failed">Fallita</string>
+    <string name="label_transactionState_pending" ditto_api_id="label_transactionState_pending">In sospeso</string>
+    <string name="label_transactionState_performed" ditto_api_id="label_transactionState_performed">Eseguita</string>
+    <string name="label_transactionState_refunded" ditto_api_id="label_transactionState_refunded">Rimborsata</string>
+    <string name="label_transactionState_toBeRefunded" ditto_api_id="label_transactionState_toBeRefunded">Da rimborsare</string>
+    <string name="cancel">Cancella</string>
+    <string name="amount">IMPORTO</string>
+    <string name="currency">€</string>
+    <string name="insert_auth_code">Inserisci codice di autorizzazione</string>
+</resources>

@@ -1,0 +1,21 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/turquoise_alpha" />
+            <corners android:radius="100dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="4dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp">
+        <shape>
+            <corners android:radius="100dp" />
+            <solid android:color="@color/turquoise_alpha" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/turquoise" />
+        </shape>
+    </item>
+</layer-list>

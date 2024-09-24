@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://nexus.poynt.com/content/repositories/releases'
+        }
+        maven {
+            url 'https://nexus.poynt.com/content/repositories/snapshots'
+        }
+    }
+}
+rootProject.name = "SWC-SMARTPOS"
+include ':app'
+include ':ui_kit'
+include ':sharedUtils'
+include ':network'
+include ':poynt'
+include ':pax'
+include ':idpay'
+include ':app_shared'
+include ':readcie'
+include ':android'

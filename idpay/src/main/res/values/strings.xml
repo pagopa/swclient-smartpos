@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">idpay</string>
+    <string name="title_a11y_payNotice" ditto_api_id="title_a11y_payNotice">Accetta un bonus i di pay</string>
+    <string name="title_intro" ditto_api_id="title_intro">Accetta un bonus ID Pay</string>
+    <string name="description_intro" ditto_api_id="description_intro">Inserisci i dettagli del pagamento e permetti ai tuoi clienti di utilizzare un bonus ID Pay.</string>
+    <string name="cta_intro" ditto_api_id="cta_intro">Accetta bonus ID Pay</string>
+    <string name="title_exitAppDialog" ditto_api_id="title_exitAppDialog">Confermi di voler uscire dall’app idpay?</string>
+    <string name="cta_exitApp" ditto_api_id="cta_exitApp">Esci dall’app</string>
+    <string name="cta_close" ditto_api_id="cta_close">Chiudi</string>
+    <string name="cta_cancel" ditto_api_id="cta_cancel">Annulla</string>
+    <string name="label_username" ditto_api_id="label_username">Nome utente</string>
+    <string name="label_password" ditto_api_id="label_password">Password</string>
+    <string name="title_loginTestEnv" ditto_api_id="title_loginTestEnv">Ambiente di test</string>
+    <string name="cta_login" ditto_api_id="cta_login">Accedi</string>
+    <string name="feedback_loginFailed" ditto_api_id="feedback_loginFailed">Accesso non riuscito. Hai inserito il nome utente e la password corretti\?</string>
+    <string name="cta_menu_paymentHistory" ditto_api_id="cta_menu_paymentHistory">Storico operazioni</string>
+    <string name="cta_menu_support" ditto_api_id="cta_menu_support">Assistenza</string>
+    <string name="choose_initiative">Scegli l’iniziativa</string>
+    <string name="euro">€</string>
+    <string name="feedback_loading_printReceipt" ditto_api_id="feedback_loading_printReceipt">Attendi la stampa della ricevuta…</string>
+    <string name="amount">IMPORTO DEL BENE</string>
+    <string name="amount_printer">Importo del bene</string>
+    <string name="cost_amount">IMPORTO SPESA</string>
+    <string name="insert_auth_code">Inserisci il codice ID Pay</string>
+    <string name="calculate_sale">Calcola sconto</string>
+    <string name="cancel">Cancella</string>
+    <string name="authorize">Autorizza</string>
+    <string name="auth_cost_of">Autorizza una spesa di</string>
+    <string name="insert_cie">Avvicina la CIE al lettore</string>
+    <string name="scan_qr_with_IO">Inquadra il codice QR con il tuo smartphone</string>
+    <string name="identify_with_cie">IDENTIFICAZIONE CON CIE</string>
+    <string name="identify_with_io">IDENTIFICAZIONE CON IO</string>
+    <string name="or_insert_code">oppure inserisci il codice</string>
+    <string name="wait_auth">Attendi autorizzazione</string>
+    <string name="wait_auth_description">Per proseguire è necessario autorizzare l’operazione su app IO</string>
+    <string name="operation_ok">L’operazione è andata a buon fine!</string>
+    <string name="cta_continue" ditto_api_id="cta_continue">Continua</string>
+    <string name="available_sale">Sconto applicabile</string>
+    <string name="confirm_cie_op_title">Confermi l’operazione?</string>
+    <string name="initiative">Iniziativa</string>
+    <string name="initiative_id">Id Iniziativa</string>
+    <string name="applied_sale">Sconto applicato</string>
+    <string name="id_pay_bonus">Bonus ID Pay</string>
+    <string name="to_authorize">Da autorizzare</string>
+    <string name="deny">Nega</string>
+    <string name="operation_resume_title">Riepilogo operazione</string>
+    <string name="label_updatedAmount" ditto_api_id="label_updatedAmount">IMPORTO TOTALE</string>
+    <string name="label_residualAmount" ditto_api_id="label_residualAmount">Importo residuo</string>
+    <string name="cta_pay_cash" ditto_api_id="cta_pay_cash">Paga in contanti</string>
+    <string name="cta_pay_card" ditto_api_id="cta_pay_cash">Paga con carta</string>
+    <string name="accept_new_bonus">Accetta nuovo bonus</string>
+    <string name="generate_qr_code">Genera codice QR</string>
+    <string name="how_to_authorize_bonus">Come vuoi identificarti?</string>
+    <string name="auth_with_id_card">Identificazione con CIE</string>
+    <string name="auth_with">Identificazione con</string>
+    <string name="auth_now">Autorizzazione in corso</string>
+    <string name="cancel_op">Annulla operazione</string>
+    <string name="pay_residual">Paga l’importo residuo</string>
+    <string name="how_to_pay_residual">Come vuoi pagare l’importo residuo?</string>
+    <string name="pay_with_cash_chosen_title">Procedi con il pagamento del residuo in contanti</string>
+    <string name="residual_import">Importo residuo</string>
+    <string name="residual_import_dialog_title">C’è un importo residuo</string>
+    <string name="residual_import_dialog_description">Rimangono da pagare %s</string>
+    <string name="residual_import_dialog_cta">Paga l’importo residuo</string>
+    <string name="cie_read_description">Lettura carta OK</string>
+    <string name="cie_failed_read_description">Lettura carta non riuscita</string>
+    <string name="exit_from_current_op">Vuoi uscire dall’operazione in corso?</string>
+    <string name="exit_from_current_op_description">L’operazione verrà annullata e sarà necessario ricominciare da capo.</string>
+    <string name="exit_payment">Esci dal pagamento</string>
+    <string name="reading_cie">Stiamo verificando la CIE</string>
+    <string name="residual_payment_title">Pagamento residuo</string>
+    <string name="residual">Residuo</string>
+    <string name="id_pay_bonus_uppercase">BONUS ID PAY</string>
+    <string name="bonus_cost">Importo spesa</string>
+    <string name="dialog_cancel_op_title">Vuoi annullare la spesa del bonus ID Pay?</string>
+    <string name="dialog_cancel_op_description">Se annulli l’operazione l’importo verrà riaccreditato sull’iniziativa del cittadino.</string>
+    <string name="dialog_cancel_op_delete">Torna indietro</string>
+    <string name="cancel_op_loader">Annullamento in corso</string>
+    <string name="operation_canceled">Operazione annullata</string>
+    <string name="operation_canceled_descr">L’importo autorizzato è stato riaccreditato sull’iniziativa del cittadino.</string>
+    <string name="pay_s">Paga %s</string>
+    <string name="verify_id_pay_portfolio">Stiamo verificando il tuo portafoglio ID Pay</string>
+    <string name="id_pay_bonus_ok">Bonus ID Pay accettato!</string>
+    <string name="id_pay_bonus_ok_descr">Hai pagato %s!</string>
+    <string name="back_home_dialog_title">Vuoi tornare alla home?</string>
+    <string name="back_home_dialog_description">C’è un residuo da pagare di %s</string>
+    <string name="back_home_dialog_cta">Torna alla home</string>
+    <string name="avoid">Annulla</string>
+    <string name="id_pay_intro_second_screen">Paga con ID Pay</string>
+    <string name="continue_on_io_second_screen">Continua sull’app IO</string>
+    <string name="focus_qr_second_screen_first">Inquadra il</string>
+    <string name="focus_qr_second_screen_second">codice QR con il</string>
+    <string name="focus_qr_second_screen_third">tuo smartphone</string>
+    <string name="canceled_op_by_io_title">L’operazione è stata annullata</string>
+    <string name="canceled_op_by_io_description">Se hai annullato per errore, prova ad autorizzare di nuovo il pagamento.</string>
+    <string name="session_expired_by_io_title">La sessione è scaduta</string>
+    <string name="session_expired_by_io_description">Se vuoi procedere con il pagamento, prova ad autorizzarlo di nuovo.</string>
+    <string name="auth_denied">Autorizzazione negata</string>
+    <string name="auth_denied_description">Non è stato addebitato alcun importo.</string>
+    <string name="cancel_id_pay_bonus_are_you_sure_title">Vuoi annullare la spesa del bonus ID Pay?</string>
+    <string name="cancel_id_pay_bonus_are_you_sure_description">La spesa è già stata autorizzata, se annulli l’operazione l’importo verrà riaccreditato sull’iniziativa del cittadino.</string>
+    <string name="cancel_id_pay_bonus_are_you_sure_cta_no">Concludi operazione</string>
+    <string name="cancel_id_pay_bonus_are_you_sure_cta_yes">Annulla operazione</string>
+    <string name="title_errorLoadingTransactionList" ditto_api_id="title_errorLoadingTransactionList">Non è stato possibile recuperare la lista delle iniziative</string>
+    <string name="title_errorLoadingInitiativeList" ditto_api_id="title_errorLoadingInitiativeList">Non è stato possibile recuperare lo storico delle operazioni</string>
+    <string name="paragraph_tryAgain" ditto_api_id="paragraph_tryAgain">Riprova tra qualche minuto.</string>
+    <string name="qr_trouble_question">Problemi con il QR?</string>
+    <string name="qr_trouble_question_description">Entra sull’app IO, vai nella sezione\nInquadra e digita il codice:</string>
+    <string name="qr_trouble_question_description_first_second_screen">Entra sull’app IO, vai nella sezione</string>
+    <string name="qr_trouble_question_description_second_second_screen">Inquadra e digita il codice:</string>
+    <string name="payment_receipt">RICEVUTA DI PAGAMENTO</string>
+    <string name="label_transactionTime" ditto_api_id="label_transactionTime">Data e ora</string>
+    <string name="payment_receipt_cancel">RICEVUTA DI ANNULLAMENTO</string>
+    <string name="payment_receipt_cancel_descr_1">Il pagamento è stato annullato e</string>
+    <string name="payment_receipt_cancel_descr_2">riaccreditato sul tuo portafoglio ID Pay.</string>
+    <string name="cta_generateReceipt" ditto_api_id="cta_generateReceipt">Emetti ricevuta</string>
+    <string name="executed" ditto_api_id="executed">ESEGUITA</string>
+    <string name="canceled" ditto_api_id="canceled">ANNULLATA</string>
+    <string name="dialog_pin_attempts_title">Codice errato!</string>
+    <string name="dialog_pin_attempts_description">Hai a disposizione ancora %s tentativi</string>
+    <string name="dialog_pin_attempt_description">Hai a disposizione ancora %s tentativo</string>
+    <string name="pin_attempts_exhausted_title">Hai esaurito i tentativi</string>
+    <string name="pin_attempts_exhausted_description">Se non ricordi il codice ID Pay, puoi impostarne uno nuovo sull’app IO nella sezione Profilo > Sicurezza.</string>
+    <string name="no_initiative_found" ditto_api_id="title_emptyState_transactionList">Nessuna iniziativa trovata</string>
+    <string name="no_possible_to_continue_op" ditto_api_id="no_possible_to_continue_op">Non è possibile completare l’operazione</string>
+    <string name="authorize_with" ditto_api_id="authorize_with">Autorizza con</string>
+</resources>

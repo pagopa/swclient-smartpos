@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_scanQrCode" ditto_api_id="title_scanQrCode">Inquadra il Codice QR</string>
+    <string name="paragraph_howToScan" ditto_api_id="paragraph_howToScan">Assicurati di avere una buona illuminazione e, se il codice non è a fuoco, prova ad allontanarlo leggermente.</string>
+    <string name="cta_close" ditto_api_id="cta_close">Chiudi</string>
+</resources>

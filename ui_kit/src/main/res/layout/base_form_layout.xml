@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:importantForAccessibility="no">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/form_image"
+            android:layout_width="@dimen/base_form_logo"
+            android:layout_height="@dimen/base_form_logo"
+            android:layout_gravity="center_horizontal"
+            android:importantForAccessibility="no"
+            android:paddingTop="@dimen/header_margin_top"
+            android:src="@drawable/logo_blu" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/form_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_extra_large"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h3"
+            tools:text="Ambiente di test" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_inputs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:importantForAccessibility="no"
+            android:orientation="vertical" />
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+            android:id="@+id/btn_form"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            app:text="Accedi" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

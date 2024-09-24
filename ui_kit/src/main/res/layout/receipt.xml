@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:importantForAccessibility="no">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_image"
+            android:layout_width="@dimen/receipt_image"
+            android:layout_height="@dimen/receipt_image"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            tools:src="@drawable/add_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h3"
+            tools:text="Emetti ricevuta" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondary_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/titillium_web_regular"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body"
+            tools:text="Eventuale testo secondario qui" />
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+            android:id="@+id/first_btn_receipt"
+            style="@style/WhiteButtonStartStar"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top_plus_header_margin_top"
+            tools:button_text="Invia via email" />
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+            android:id="@+id/second_btn_receipt"
+            style="@style/WhiteOutLinedButtonStartStar"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            tools:button_text="Stampa ricevuta" />
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+            android:id="@+id/third_btn_receipt"
+            style="@style/WhiteOutLinedButtonStartStar"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            tools:button_text="No ricevuta" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

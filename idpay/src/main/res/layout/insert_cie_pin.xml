@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_light">
+
+    <it.pagopa.swc_smartpos.ui_kit.custom_keyboard.CustomKeyboard
+        android:id="@+id/custom_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:is_pin="true"
+        app:layout_constraintBottom_toTopOf="@id/btn_confirm"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/insert_auth_code" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_confirm"
+        style="@style/PrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/margin_horizontal"
+        android:layout_marginVertical="@dimen/divider_padding"
+        android:text="@string/cta_confirm"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

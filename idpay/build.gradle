@@ -1,0 +1,157 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id "org.jetbrains.kotlin.plugin.allopen" version "$kotlin_version"
+}
+apply from: '../jacoco_id_pay.gradle'
+allOpen {
+    annotation("it.pagopa.swc.smartpos.app_shared.Mockable")
+}
+android {
+    namespace 'it.pagopa.swc.smartpos.idpay'
+    compileSdk 34
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+    signingConfigs {
+        release {
+            storeFile file("../keystores/debug.keystore_id_pay.jks")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        debug {
+            storeFile file("../keystores/debug.keystore_id_pay.jks")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        minSdk 21
+        applicationId "it.pagopa.swc.smartpos.idpay"
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        multiDexEnabled true
+        signingConfig signingConfigs.release
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+            minifyEnabled false
+            debuggable true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard file('multidex-config.pro')
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard file('multidex-config.pro')
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility sourceCompatibilityVersion
+        targetCompatibility targetCompatibilityVersion
+    }
+    kotlinOptions {
+        jvmTarget = jvmTargetVersion
+    }
+    flavorDimensions = ["appType", "environment"]
+    productFlavors {
+        androidNative {
+            applicationId "it.pagopa.swc.smartpos.idpay.androidNative"
+            versionCode 1
+            versionName "1.0.0"
+            dimension "appType"
+        }
+        dev {
+            dimension "environment"
+            buildConfigField "String", "testName", "\"1.6.1\""
+            matchingFallbacks = ["dev"]
+        }
+        uat {
+            buildConfigField "String", "testName", "\"1.6.1\""
+            dimension "environment"
+            matchingFallbacks = ["uat"]
+        }
+        mock {
+            buildConfigField "String", "testName", "\"0.0.2\""
+            dimension "environment"
+            matchingFallbacks = ["mock"]
+        }
+        prod {
+            buildConfigField "String", "testName", "\"0.0.2\""
+            dimension "environment"
+            matchingFallbacks = ["prod"]
+        }
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def name = "IDPAY"
+            def SEP = "-"
+            def flavorAppType = variant.productFlavors[0].name
+            def flavorEnvironment = variant.productFlavors[1].name
+            def buildType = variant.buildType.name
+            def newApkName = name + SEP + flavorAppType + SEP +flavorEnvironment + SEP + buildType + ".apk"
+            outputFileName = newApkName
+        }
+    }
+}
+
+dependencies {
+    implementation("androidx.core:core-splashscreen:1.0.1")
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'//needed by zxing
+    //MAIN LIBS
+    implementation project(path: ':app_shared')
+    implementation project(path: ':sharedUtils')
+    implementation project(path: ':network')
+    implementation project(path: ':ui_kit')
+    implementation project(path: ':readcie')
+    //ANDROIDX
+    implementation "androidx.core:core-ktx:$core_ktx_v"
+    implementation "androidx.appcompat:appcompat:$app_compat_v"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.annotation:annotation:$androidx_annotation"
+    implementation "androidx.multidex:multidex:$multidex_v"
+    // Navigation component (in Kotlin)
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    //GOOGLE
+    implementation "com.google.code.gson:gson:$gson_v"
+    implementation "com.google.android.material:material:$material_v"
+    //COROUTINES
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_v"
+    //TEST
+    debugImplementation("androidx.navigation:navigation-testing:$nav_version")
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation "io.mockk:mockk-android:1.13.4"
+    debugImplementation 'androidx.test:core:1.5.0'
+    debugImplementation 'androidx.test:runner:1.5.2'
+    debugImplementation 'androidx.test:rules:1.5.0'
+    debugImplementation("androidx.fragment:fragment-testing:1.7.1")
+    debugImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    debugImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
+    androidTestImplementation 'com.google.dexmaker:dexmaker-mockito:1.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android_v"
+    testImplementation 'io.mockk:mockk:1.13.8'
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    testImplementation 'com.squareup.okhttp3:mockwebserver:5.0.0-alpha.11'
+}

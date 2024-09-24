@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="h3">22sp</dimen>
+    <dimen name="h6">16sp</dimen>
+    <dimen name="body">16sp</dimen>
+    <dimen name="medium">24dp</dimen>
+    <dimen name="header_margin_top">27dp</dimen>
+    <dimen name="body_margin_top">16dp</dimen>
+    <dimen name="view_horizontal_padding">28dp</dimen>
+    <dimen name="button_padding_vertical">9dp</dimen>
+    <dimen name="button_padding_horizontal">16dp</dimen>
+    <dimen name="cta">16sp</dimen>
+    <dimen name="image_margins">210dp</dimen>
+    <dimen name="camera_box_size">240dp</dimen>
+    <dimen name="camera_box_height">330dp</dimen>
+    <dimen name="margin_horizontal">24dp</dimen>
+</resources>

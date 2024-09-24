@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="it.pagopa.swc_smartpos.view.IntroFragment"
+        android:label="IntroFragment"
+        tools:layout="@layout/intro">
+        <action
+            android:id="@+id/action_introFragment_to_insertManuallyFragment"
+            app:destination="@id/insertManuallyFragment" />
+
+        <action
+            android:id="@+id/action_introFragment_to_allowCameraAccessFragment"
+            app:destination="@id/allowCameraAccessFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_scanCodeFragment"
+            app:destination="@id/scanCodeFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_paymentResumeFragment"
+            app:destination="@id/paymentResumeFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_paymentReceiptFragment"
+            app:destination="@id/paymentReceiptFragment" />
+
+    </fragment>
+    <action
+        android:id="@+id/action_global_introFragment"
+        app:destination="@id/introFragment" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="it.pagopa.swc_smartpos.view.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/result">
+        <action
+            android:id="@+id/action_resultFragment_to_receiptFragment"
+            app:destination="@id/receiptFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_outroFragment"
+            app:destination="@id/outroFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_resultFragment"
+        app:destination="@id/resultFragment" />
+    <fragment
+        android:id="@+id/outroFragment"
+        android:name="it.pagopa.swc_smartpos.view.OutroFragment"
+        android:label="OutroFragment"
+        tools:layout="@layout/outro" />
+    <fragment
+        android:id="@+id/paymentResumeFragment"
+        android:name="it.pagopa.swc_smartpos.view.PaymentResumeFragment"
+        android:label="PaymentResumeFragment"
+        tools:layout="@layout/payment_resume">
+        <action
+            android:id="@+id/action_paymentResumeFragment_to_paymentReceiptFragment"
+            app:destination="@id/paymentReceiptFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertManuallyFragment"
+        android:name="it.pagopa.swc_smartpos.view.InsertManuallyFragment"
+        android:label="InsertManuallyFragment"
+        tools:layout="@layout/insert_manually">
+        <action
+            android:id="@+id/action_insertManuallyFragment_to_paymentResumeFragment"
+            app:destination="@id/paymentResumeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanCodeFragment"
+        android:name="it.pagopa.swc_smartpos.view.ScanCodeFragment"
+        android:label="ScanCodeFragment"
+        tools:layout="@layout/activity_custom_scanner">
+        <action
+            android:id="@+id/action_scanCodeFragment_to_paymentResumeFragment"
+            app:destination="@id/paymentResumeFragment" />
+        <action
+            android:id="@+id/action_scanCodeFragment_to_insertManuallyFragment"
+            app:destination="@id/insertManuallyFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/uiKitShowCase"
+        android:name="it.pagopa.swc_smartpos.view.UiKitShowCase"
+        android:label="UiKitShowCase"
+        tools:layout="@layout/ui_kit_show_case">
+        <action
+            android:id="@+id/action_uiKitShowCase_to_buttonsShowCase"
+            app:destination="@id/buttonsShowCase" />
+        <action
+            android:id="@+id/action_uiKitShowCase_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_uiKitShowCase_to_receiptFragment"
+            app:destination="@id/receiptFragment" />
+        <action
+            android:id="@+id/action_uiKitShowCase_to_outroFragment"
+            app:destination="@id/outroFragment" />
+        <action
+            android:id="@+id/action_uiKitShowCase_to_inputFieldShowCase"
+            app:destination="@id/inputFieldShowCase" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_UiKitShowcase"
+        app:destination="@id/uiKitShowCase" />
+
+    <fragment
+        android:id="@+id/buttonsShowCase"
+        android:name="it.pagopa.swc_smartpos.view.ButtonsShowCase"
+        android:label="ButtonsShowCase"
+        tools:layout="@layout/buttons_show_case" />
+    <fragment
+        android:id="@+id/receiptFragment"
+        android:name="it.pagopa.swc_smartpos.view.ReceiptFragment"
+        android:label="ReceiptFragment"
+        tools:layout="@layout/receipt">
+        <action
+            android:id="@+id/action_receiptFragment_to_outroFragment"
+            app:destination="@id/outroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentReceiptFragment"
+        android:name="it.pagopa.swc_smartpos.view.PaymentReceiptFragment"
+        android:label="PaymentReceiptFragment"
+        tools:layout="@layout/payment_amount_resume">
+        <action
+            android:id="@+id/action_paymentReceiptFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputFieldShowCase"
+        android:name="it.pagopa.swc_smartpos.view.InputFieldShowCase"
+        android:label="InputFieldShowCase"
+        tools:layout="@layout/input_field_show_case" />
+    <fragment
+        android:id="@+id/allowCameraAccessFragment"
+        android:name="it.pagopa.swc_smartpos.view.AllowCameraAccessFragment"
+        android:label="AllowCameraAccessFragment"
+        tools:layout="@layout/allow_camera_access">
+        <action
+            android:id="@+id/action_allowCameraAccessFragment_to_scanCodeFragment"
+            app:destination="@id/scanCodeFragment" />
+        <action
+            android:id="@+id/action_allowCameraAccessFragment_to_insertManuallyFragment"
+            app:destination="@id/insertManuallyFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="it.pagopa.swc_smartpos.view.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/base_form_layout">
+        <action
+            android:id="@+id/action_loginFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_storicoFragment"
+        app:destination="@id/transactionHistoryFragment" />
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="it.pagopa.swc_smartpos.view.TransactionHistoryFragment"
+        android:label="StoricoFragment"
+        tools:layout="@layout/tansaction_history_fragment">
+
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/transactionDetailFragment"
+        android:name="it.pagopa.swc_smartpos.view.TransactionDetailFragment"
+        android:label="TransactionDetailFragment"
+        tools:layout="@layout/transaction_detail_fragment">
+
+        <action
+            android:id="@+id/action_transactionDetailFragment_to_outroFragment"
+            app:destination="@id/outroFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_WebViewFragment"
+        app:destination="@id/webviewFragment" />
+    <fragment
+        android:id="@+id/webviewFragment"
+        android:name="it.pagopa.swc_smartpos.view.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/webview_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/helpedWaySubscribeFragment"
+        android:name="it.pagopa.swc_smartpos.view.HelpedWaySubscribeFragment"
+        android:label="HelpedWaySubscribeFragment"
+        tools:layout="@layout/base_form_layout" />
+    <action
+        android:id="@+id/action_global_helpedWay"
+        app:destination="@id/helpedWaySubscribeFragment" />
+</navigation>

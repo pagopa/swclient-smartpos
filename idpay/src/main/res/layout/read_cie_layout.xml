@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="@dimen/margin_horizontal"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/extra_large">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center_horizontal"
+            android:text="@string/identify_with_cie"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cie_cv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center_horizontal"
+            android:text="@string/insert_cie"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h4" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_image"
+            android:layout_width="@dimen/cie_image_width"
+            android:layout_height="@dimen/cie_image_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            android:src="@drawable/cie_example_image" />
+
+        <FrameLayout
+            android:id="@+id/fl_balls_cie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            android:importantForAccessibility="no">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:importantForAccessibility="no"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/circle_one"
+                    android:layout_width="@dimen/circle_read_size"
+                    android:layout_height="@dimen/circle_read_size"
+                    android:background="@drawable/rounded_success_drawable_100_dp"
+                    android:importantForAccessibility="no" />
+
+
+                <View
+                    android:id="@+id/circle_two"
+                    android:layout_width="@dimen/circle_read_size"
+                    android:layout_height="@dimen/circle_read_size"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_grey_light_drawable_100_dp"
+                    android:importantForAccessibility="no" />
+
+                <View
+                    android:id="@+id/circle_three"
+                    android:layout_width="@dimen/circle_read_size"
+                    android:layout_height="@dimen/circle_read_size"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_grey_light_drawable_100_dp"
+                    android:importantForAccessibility="no" />
+
+                <View
+                    android:id="@+id/circle_four"
+                    android:layout_width="@dimen/circle_read_size"
+                    android:layout_height="@dimen/circle_read_size"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_grey_light_drawable_100_dp"
+                    android:importantForAccessibility="no" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

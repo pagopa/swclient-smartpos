@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intro_parent"
+    android:background="@color/primary">
+
+    <FrameLayout
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/header_height">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/icon_header_dimension"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            android:paddingStart="@dimen/margin_horizontal"
+            android:src="@drawable/menu" />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_intro_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/receipt_image"
+            android:layout_height="@dimen/receipt_image"
+            android:layout_gravity="center"
+            android:src="@drawable/bonus" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_title_and_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro"
+                android:gravity="center"
+                android:text="@string/title_intro"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/extra_small"
+                android:fontFamily="@font/titillium_web_regular"
+                android:gravity="center"
+                android:lineSpacingExtra="4sp"
+                android:text="@string/description_intro"
+                android:textColor="@color/white"
+                android:textSize="@dimen/body" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_btn"
+            style="@style/WhiteButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            android:text="@string/cta_intro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/version"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            tools:text="V. 1.0.0"
+            android:fontFamily="@font/titillium_web_regular"
+            android:layout_marginTop="40dp"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

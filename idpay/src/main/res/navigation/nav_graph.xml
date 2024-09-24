@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.IntroFragment"
+        android:label="IntroFragment"
+        tools:layout="@layout/intro_binding">
+        <action
+            android:id="@+id/action_introFragment_to_chooseInitiative"
+            app:destination="@id/chooseInitiative" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/base_form_layout">
+        <action
+            android:id="@+id/action_loginFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseInitiative"
+        android:name="it.pagopa.swc.smartpos.idpay.view.ChooseInitiative"
+        android:label="ChooseInitiative"
+        tools:layout="@layout/choose_initiative">
+        <action
+            android:id="@+id/action_chooseInitiative_to_chooseImportFragment"
+            app:destination="@id/chooseImportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseImportFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.ChooseImportFragment"
+        android:label="ChooseImportFragment"
+        tools:layout="@layout/choose_import">
+        <action
+            android:id="@+id/action_chooseImportFragment_to_cieReaderFragment"
+            app:destination="@id/cieReaderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cieReaderFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.cie_read_or_qr_code.CieReaderOrQrCodeFragment"
+        android:label="CieReaderFragment"
+        tools:layout="@layout/cie_reader">
+        <action
+            android:id="@+id/action_cieReaderFragment_to_confirmCieOperation"
+            app:destination="@id/confirmCieOperation" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/result">
+        <action
+            android:id="@+id/action_resultFragment_to_receiptFragment"
+            app:destination="@id/receiptFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_resultFragment"
+        app:destination="@id/resultFragment" />
+    <fragment
+        android:id="@+id/receiptFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.ReceiptFragment"
+        android:label="ReceiptFragment"
+        tools:layout="@layout/receipt">
+        <action
+            android:id="@+id/action_receiptFragment_to_outroFragment"
+            app:destination="@id/outroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/outroFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.OutroFragment"
+        android:label="OutroFragment"
+        tools:layout="@layout/outro">
+        <action
+            android:id="@+id/action_outroFragment_to_residualPaymentFragment"
+            app:destination="@id/residualPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertCiePinFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.InsertCiePinFragment"
+        android:label="InsertCiePinFragment"
+        tools:layout="@layout/insert_cie_pin" />
+    <fragment
+        android:id="@+id/residualPaymentFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.ResidualPaymentFragment"
+        android:label="ResidualPaymentFragment"
+        tools:layout="@layout/residual_payment_fragment">
+        <action
+            android:id="@+id/action_residualPaymentFragment_to_outroFragment"
+            app:destination="@id/outroFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_choose_initiative"
+        app:destination="@id/chooseInitiative" />
+    <action
+        android:id="@+id/action_global_introFragment"
+        app:destination="@id/introFragment" />
+
+    <action
+        android:id="@+id/action_global_WebViewFragment"
+        app:destination="@id/webViewFragment" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/web_view_fragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.TransactionHistoryFragment"
+        android:label="TransactionHistoryFragment"
+        tools:layout="@layout/transaction_history_fragment">
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_transactionHistory"
+        app:destination="@id/transactionHistoryFragment" />
+    <fragment
+        android:id="@+id/confirmCieOperation"
+        android:name="it.pagopa.swc.smartpos.idpay.view.ConfirmCieOperation"
+        android:label="ConfirmCieOperation"
+        tools:layout="@layout/confirm_cie_op">
+        <action
+            android:id="@+id/action_confirmCieOperation_to_insertCiePinFragment"
+            app:destination="@id/insertCiePinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailFragment"
+        android:name="it.pagopa.swc.smartpos.idpay.view.transaction_detail.TransactionDetailFragment"
+        android:label="TransactionDetailFragment"
+        tools:layout="@layout/transaction_detail_fragment">
+        <action
+            android:id="@+id/action_transactionDetailFragment_to_outroFragment"
+            app:destination="@id/outroFragment" />
+    </fragment>
+</navigation>

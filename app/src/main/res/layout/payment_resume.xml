@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_resume"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/fl_btn"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_resume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/payment_resume_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/header_margin_top"
+                android:fontFamily="@font/readex_pro"
+                android:text="@string/title_paymentDetails"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_payment_resume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/header_margin_top"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_payment" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_top_corners_16_dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <it.pagopa.swc_smartpos.ui_kit.buttons.CustomLoadingButton
+            android:id="@+id/btn_pay"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="@dimen/divider_padding"
+            android:layout_marginHorizontal="@dimen/margin_horizontal"
+            app:text="@string/cta_goToCheckout" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_alpha_75">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_horizontal"
+        android:background="@drawable/styled_dialog_background_info"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/fl_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:padding="@dimen/margin_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/dialog_iv"
+                android:layout_width="@dimen/styled_dialog_image"
+                android:layout_height="@dimen/styled_dialog_image"
+                android:importantForAccessibility="no"
+                android:src="@drawable/info_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/close_styled_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cta_close"
+            android:padding="@dimen/header_margin_top"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/close_styled_dialog_iv"
+                android:layout_width="@dimen/close_dialog_image"
+                android:layout_height="@dimen/close_dialog_image"
+                android:importantForAccessibility="no"
+                android:src="@drawable/icon_close_info" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_styled_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_horizontal"
+            android:importantForAccessibility="no"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_iv">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:fontFamily="@font/readex_pro"
+                android:gravity="center"
+                android:textColor="@color/info_dark"
+                android:textSize="@dimen/h4"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/extra_small"
+                android:fontFamily="@font/titillium_web_regular"
+                android:gravity="center"
+                android:textColor="@color/info_dark"
+                android:textSize="@dimen/body"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                android:id="@+id/first_action_custom_button"
+                style="@style/InfoDarkButtonEndStar"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                tools:button_text="Lorem ipsum" />
+
+            <it.pagopa.swc_smartpos.ui_kit.buttons.CustomDrawableButton
+                android:id="@+id/second_action_custom_button"
+                style="@style/InfoLightButtonStartStar"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                tools:button_text="Lorem ipsum" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/first_action"
+                style="@style/InfoDarkButton"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                tools:text="Lorem ipsum" />
+
+            <it.pagopa.swc_smartpos.ui_kit.progress.AnimatedProgress
+                android:id="@+id/animatedProgress"
+                style="@style/AnimatedProgressInfo"
+                android:layout_marginTop="@dimen/header_margin_top" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/second_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readex_pro"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_horizontal"
+                android:textColor="@color/info_dark"
+                android:textSize="@dimen/body"
+                tools:text="Lorem ipsum" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

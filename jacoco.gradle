@@ -1,0 +1,307 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion "0.8.7"
+}
+
+private static boolean isAndroidModule(Project project) {
+    boolean isAndroidLibrary = project.plugins.hasPlugin('com.android.library')
+    boolean isAndroidApp = project.plugins.hasPlugin('com.android.application')
+    return isAndroidLibrary || isAndroidApp
+}
+
+afterEvaluate { project ->
+    if (isAndroidModule(project)) setupAndroidReporting()
+    else setupKotlinReporting()
+}
+
+def setupKotlinReporting() {
+    def outputDirHtml = "${project.rootDir}/jacoco_report/html"
+    def outputDirXml = "${project.rootDir}/jacoco_report/xml"
+    jacocoTestReport {
+        dependsOn test
+        reports {
+            csv.required = false // change if needed
+            xml {
+                required = true
+                destination file("$outputDirXml/report.xml")
+            }
+            html {
+                required = true
+                destination file("$outputDirHtml")
+            }
+        }
+        afterEvaluate {
+            classDirectories.from = files(classDirectories.files.collect {
+                fileTree(dir: it, exclude: [
+                        // dagger
+                        '**/*_MembersInjector.class',
+                        '**/Dagger*Component.class',
+                        '**/Dagger*Component$Builder.class',
+                        '**/Dagger*Subcomponent*.class',
+                        '**/*Subcomponent$Builder.class',
+                        '**/*Module_*Factory.class',
+                        '**/di/module/*',
+                        '**/*_Factory*.*',
+                        '**/*Module*.*',
+                        '**/*$Parcelable*.*',
+                        '**/*Binding*.*',
+                        '**/*Dagger*.*',
+                        '**/*Hilt*.*',
+                ])
+            })
+        }
+    }
+}
+
+def setupAndroidReporting() {
+    def outputDirHtml = "${project.rootDir}/jacoco_report/html"
+    def outputDirXml = "${project.rootDir}/jacoco_report/xml"
+    tasks.withType(Test) {
+        // Whether or not classes without source location should be instrumented
+        jacoco.includeNoLocationClasses true
+        jacoco.excludes = ['jdk.internal.*']
+    }
+
+    // Grab all build types and product flavors
+    def buildTypes = android.buildTypes.collect { type ->
+        type.name
+    }
+    def productFlavors = android.productFlavors.collect { flavor ->
+        flavor.name
+    }
+    // When no product flavors defined, use empty
+    if (!productFlavors) productFlavors.add('')
+    productFlavors.each { productFlavorName ->
+        def productToAdd = productFlavorName
+        if (productFlavorName == "poynt" || productFlavorName == "androidNative" || productFlavorName == "pax") {
+            productToAdd += "Mock"
+        }
+        buildTypes.each { buildTypeName ->
+            def sourceName
+            if (!productFlavorName) {
+                sourceName = "${buildTypeName}"
+            } else {
+                sourceName = "${productToAdd}${buildTypeName.capitalize()}"
+            }
+            def testTaskName = "test${sourceName.capitalize()}UnitTest"
+            System.out.println("Task -> $testTaskName")
+
+            // Create coverage task of form 'testFlavorTypeCoverage' depending on 'testFlavorTypeUnitTest'
+            task "${sourceName}Coverage"(type: JacocoReport) {
+                group = "Reporting"
+                description = "Generate Jacoco coverage reports on the ${sourceName.capitalize()} build."
+
+                def fileFilter = [
+                        // data binding
+                        'android/databinding/**/*.class',
+                        '**/android/databinding/*Binding.class',
+                        '**/android/databinding/*',
+                        '**/androidx/databinding/*',
+                        '**/BR.*',
+                        // android
+                        '**/R.class',
+                        '**/R$*.class',
+                        '**/BuildConfig.*',
+                        '**/Manifest*.*',
+                        '**/*Test*.*',
+                        'android/**/*.*',
+                        // dagger
+                        '**/*_MembersInjector.class',
+                        '**/Dagger*Component.class',
+                        '**/Dagger*Component$Builder.class',
+                        '**/Dagger*Subcomponent*.class',
+                        '**/*Subcomponent$Builder.class',
+                        '**/*Module_*Factory.class',
+                        '**/di/module/*',
+                        '**/*_Factory*.*',
+                        '**/*Module*.*',
+                        '**/*Dagger*.*',
+                        '**/*Hilt*.*',
+                        // kotlin
+                        '**/*MapperImpl*.*',
+                        '**/*$ViewInjector*.*',
+                        '**/*$ViewBinder*.*',
+                        '**/BuildConfig.*',
+                        '**/*Component*.*',
+                        '**/*BR*.*',
+                        '**/Manifest*.*',
+                        '**/*$Lambda$*.*',
+                        '**/*Companion*.*',
+                        '**/*Module*.*',
+                        '**/*Dagger*.*',
+                        '**/*Hilt*.*',
+                        '**/*MembersInjector*.*',
+                        '**/*_MembersInjector.class',
+                        '**/*_Factory*.*',
+                        '**/*_Provide*Factory*.*',
+                        '**/*Extensions*.*',
+                        // sealed and data classes
+                        '**/*$Result.*',
+                        '**/*$Result$*.*',
+                        // adapters generated by moshi
+                        '**/*JsonAdapter.*',
+                        '**/tiarg/**/*',
+                        '**/generated/**/*',
+                        '**/hilt_aggregated_deps/*',
+                        '**/DataBindingTriggerClass/*',
+                        '**/*Lazy.kt',
+                        '**/models/**/*',
+                        '**/endpoints/**/*',
+                        '**/codegen/**/*',
+                        '**/DataBindingTriggerClass.java',
+                        'it/pagopa/swc_smartpos/network/Api.class',
+                        'it/pagopa/swc_smartpos/network/HttpServiceInterface.class',
+                        'it/pagopa/swc_smartpos/network/*HttpServiceInterfaceMocked$*.*',
+                        'it/pagopa/swc_smartpos/network/*NetworkWrapper$*.*',
+                        'it/pagopa/swc_smartpos/printer/PrintReceipt.class',
+                        'it/pagopa/swc_smartpos/model/presets/*.*',
+                        'it/pagopa/swc_smartpos/model/presets/terminals/*.*',
+                        'it/pagopa/swc_smartpos/view/view_shared/*.*',
+                        'it/pagopa/swc_smartpos/model/presets/subscribe/*.*',
+                        'it/pagopa/swc_smartpos/model/preclose/*.*',
+                        'it/pagopa/swc_smartpos/view_model/SplashViewModel.class',
+                        'it/pagopa/swc_smartpos/view_model/*SplashViewModel$*.*',
+                        'it/pagopa/swc_smartpos/view_model/*BasePaymentViewModel$*.*',
+                        'it/pagopa/swc_smartpos/view_model/*InsertManuallyViewModel$*.*',
+                        'it/pagopa/swc_smartpos/view_model/HelpedWaySubscribeViewModel.class',
+                        'it/pagopa/swc_smartpos/view/*HelpedWaySubscribeFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*IntroFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*MenuBottomSheet$*.*',
+                        'it/pagopa/swc_smartpos/view/*TransactionDetailFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*TransactionHistoryFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*InsertManuallyFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*UiKitShowCase$*.*',
+                        'it/pagopa/swc_smartpos/view/*WebViewFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*InputFieldShowCase$*.*',
+                        'it/pagopa/swc_smartpos/view/*OutroFragment$*.*',
+                        'it/pagopa/swc_smartpos/network/HttpServiceInterfaceMocked.class',
+                        'it/pagopa/swc_smartpos/view/*LoginFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/TransactionDetailFragment.class',
+                        'it/pagopa/swc_smartpos/view/IntroFragment.class',
+                        'it/pagopa/swc_smartpos/view/MenuBottomSheet.class',
+                        'it/pagopa/swc_smartpos/view/*TransactionHistoryFragment*.*',
+                        'it/pagopa/swc_smartpos/view/*PaymentResumeFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*ScanCodeFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*AllowCameraAccessFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*InsertManuallyFragment$*.*',
+                        'it/pagopa/swc_smartpos/view/*ReceiptFragment$*.*',
+                        'it/pagopa/swc_smartpos/*MainActivity$*.*',
+                        'it/pagopa/swc_smartpos/view/HelpedWaySubscribeFragment.class',
+                        'it/pagopa/swc_smartpos/view/utils/**',
+                        'it/pagopa/swc_smartpos/view/UiKitShowCaseKt.class',
+                        'it/pagopa/swc_smartpos/view_model/IntroViewModel.class',
+                ]
+
+                def javaTree = fileTree(dir: "${project.buildDir}/intermediates/javac/$sourceName/classes", excludes: fileFilter)
+                def kotlinTree = fileTree(dir: "${project.buildDir}/tmp/kotlin-classes/$sourceName", excludes: fileFilter)
+                def kotlinTreeNetwork = fileTree(dir: "${project.rootDir}/network/build/tmp/kotlin-classes/debug", excludes: fileFilter)
+                classDirectories.from = files([kotlinTreeNetwork], [javaTree], [kotlinTree])
+                //System.out.println("ECCOLO")
+                //System.out.println("${project.rootDir}/network/build/outputs/code_coverage/debugAndroidTest/connected/coverage.ec")
+                executionData.from = fileTree(dir: "${project.rootDir}", includes: [
+                        // Unit tests coverage data
+                        "app/build/outputs/unit_test_code_coverage/${sourceName}UnitTest/${testTaskName}.exec",
+                        // Instrumented tests coverage data
+                        "app/build/outputs/code_coverage/${sourceName}AndroidTest/connected/**/*coverage.ec",
+                        "network/build/outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec"
+                ])
+
+                def coverageSourceDirs = ["src/main/java",
+                                          "src/$productFlavorName/java",
+                                          "src/$buildTypeName/java"]
+
+                sourceDirectories.setFrom(files(coverageSourceDirs))
+                additionalSourceDirs.setFrom(files(coverageSourceDirs))
+
+
+                reports {
+                    csv.required = false // change if needed
+
+                    html {
+                        required = true
+                        destination file("$outputDirHtml")
+                    }
+                    xml {
+                        required = true
+                        destination file("$outputDirXml/report.xml")
+                    }
+                }
+            }
+
+            ext {
+                //Limits are in percentage as double (eg. 55.3 means 55.3%)
+                limits = [
+                        'instruction': 0,
+                        'branch'     : 0,
+                        'line'       : 0,
+                        'complexity' : 0,
+                        'method'     : 0,
+                        'class'      : 0
+                ]
+            }
+
+            task "check${sourceName.capitalize()}Coverage"(dependsOn: ["${sourceName}Coverage"]) {
+                group = "Reporting"
+                description = "Check if the ${sourceName.capitalize()} build passes coverage requirements."
+
+                doLast {
+                    def reportXml = file("$outputDirXml/report.xml")
+                    def reportHtml = file("$outputDirHtml/index.html")
+
+                    logger.lifecycle("Checking coverage results: ${reportXml}")
+                    logger.lifecycle("Checking coverage results: ${reportHtml}")
+
+                    def parser = new XmlParser()
+                    parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
+                    parser.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false)
+                    def results = parser.parse(reportXml)
+
+                    def percentage = {
+                        def covered = it.'@covered' as Double
+                        def missed = it.'@missed' as Double
+                        ((covered / (covered + missed)) * 100).round(2)
+                    }
+
+
+                    def counters = results.counter
+                    def metrics = [:]
+                    metrics << [
+                            'instruction': percentage(counters.find { it.'@type'.equals('INSTRUCTION', true) }),
+                            'branch'     : percentage(counters.find { it.'@type'.equals('BRANCH', true) }),
+                            'line'       : percentage(counters.find { it.'@type'.equals('LINE', true) }),
+                            'complexity' : percentage(counters.find { it.'@type'.equals('COMPLEXITY', true) }),
+                            'method'     : percentage(counters.find { it.'@type'.equals('METHOD', true) }),
+                            'class'      : percentage(counters.find { it.'@type'.equals('CLASS', true) })
+                    ]
+
+
+                    def failures = []
+                    def coverages = []
+                    metrics.each {
+                        coverages.add("- ${it.key} coverage rate is: ${it.value}%")
+                        def limit = limits[it.key]
+                        if (it.value < limit) {
+                            failures.add("- ${it.key} coverage rate is: ${it.value}%, minimum is ${limit}%")
+                        }
+                    }
+
+
+                    if (failures) {
+                        logger.quiet("------------------ Code Coverage Failed -----------------------")
+                        failures.each {
+                            logger.quiet(it)
+                        }
+                        logger.quiet("---------------------------------------------------------------")
+                        throw new GradleException("Code coverage failed")
+                    } else {
+                        coverages.each {
+                            logger.quiet(it)
+                        }
+                        logger.quiet("Passed Code Coverage Checks")
+                    }
+                }
+            }
+        }
+    }
+}

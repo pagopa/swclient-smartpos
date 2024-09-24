@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back_home"
+        android:layout_width="@dimen/icon_header_dimension"
+        android:layout_height="@dimen/icon_header_dimension"
+        android:layout_gravity="end"
+        android:paddingTop="@dimen/margin_horizontal"
+        android:paddingEnd="@dimen/margin_horizontal"
+        android:src="@drawable/home" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/margin_horizontal"
+        android:importantForAccessibility="no"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/header_margin_top"
+            android:fontFamily="@font/readex_pro"
+            android:gravity="center_horizontal"
+            android:text="@string/title_flowCompleted"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/titillium_web_regular"
+            android:gravity="center_horizontal"
+            android:text="@string/paragraph_receipt_suggestion"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_residual_after"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_padding_horizontal"
+            android:background="@drawable/rounded_primary_border_blu_italy_1_dp"
+            android:importantForAccessibility="no"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/titillium_web_regular"
+                android:padding="@dimen/button_padding_horizontal"
+                android:text="@string/residual_import"
+                android:textColor="@color/white"
+                android:textSize="@dimen/body" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:importantForAccessibility="no" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_residual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/titillium_web_regular"
+                android:padding="@dimen/button_padding_horizontal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/body"
+                tools:text="9,99 €" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_pay_residual"
+            style="@style/WhiteButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/button_padding_horizontal"
+            android:text="@string/pay_residual"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_accept_new_bonus"
+            style="@style/WhiteButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/cta_margin_top"
+            android:text="@string/accept_new_bonus" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>
