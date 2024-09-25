@@ -1,4 +1,4 @@
-﻿# name of workflow
+# name of workflow
 name: Release a new version
 
 # Trigger on every pull request
@@ -71,8 +71,6 @@ jobs:
       - name: ASSEMBLE VARIANTS
         run: |
           build_kind_variant=""
-          build_kind_variant="${build_kind_variant} Pax"
-          build_kind_variant="${build_kind_variant} Poynt"
           build_kind_variant="${build_kind_variant} AndroidNative"
           build_type_variant=""
           build_type_variant="${build_type_variant} Uat"
